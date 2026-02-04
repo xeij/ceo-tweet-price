@@ -2,6 +2,7 @@
 //!
 //! Serves a web UI showing tracked CEO tweets and stock prices.
 //! Data is updated daily via CI/CD and stored in data/tracking.json
+//! Tracks MONTHLY metrics - tweets this month and stock change since month start.
 
 use axum::{
     http::StatusCode,
@@ -12,19 +13,18 @@ use axum::{
 use serde::{Deserialize, Serialize};
 use tower_http::cors::CorsLayer;
 
-/// Tracking data for a single CEO/stock pair
+/// Tracking data for a single CEO/stock pair (MONTHLY)
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TrackingEntry {
     ticker: String,
     company: String,
     ceo_handle: String,
-    baseline_date: String,
-    baseline_price: f64,
+    current_month: String,
+    month_start_price: f64,
     current_price: f64,
-    price_change_pct: f64,
+    monthly_price_change_pct: f64,
     price_direction: String,
-    tweet_count_total: u32,
-    tweets_this_week: u32,
+    tweets_this_month: u32,
     positive_tweets: u32,
     negative_tweets: u32,
     neutral_tweets: u32,
@@ -36,6 +36,7 @@ struct TrackingEntry {
 struct TrackingDatabase {
     created_at: String,
     last_updated: String,
+    current_month: String,
     entries: Vec<TrackingEntry>,
 }
 
@@ -43,14 +44,12 @@ struct TrackingDatabase {
 async fn main() -> anyhow::Result<()> {
     println!("Starting CEO Tweet Tracker Web Server...\n");
 
-    // Build router
     let app = Router::new()
         .route("/", get(serve_index))
         .route("/api/data", get(get_tracking_data))
         .route("/api/status", get(get_status))
         .layer(CorsLayer::permissive());
 
-    // Start server
     let addr = "127.0.0.1:3000";
     println!("Server running at http://{}", addr);
     println!("Open your browser to view the dashboard\n");
@@ -61,12 +60,10 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Serve the main HTML page
 async fn serve_index() -> impl IntoResponse {
     Html(include_str!("../web/index.html"))
 }
 
-/// Get tracking data from JSON file
 async fn get_tracking_data() -> impl IntoResponse {
     match std::fs::read_to_string("data/tracking.json") {
         Ok(content) => {
@@ -75,6 +72,7 @@ async fn get_tracking_data() -> impl IntoResponse {
                     "success": true,
                     "created_at": db.created_at,
                     "last_updated": db.last_updated,
+                    "current_month": db.current_month,
                     "entries": db.entries
                 }))),
                 Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({
@@ -84,21 +82,20 @@ async fn get_tracking_data() -> impl IntoResponse {
             }
         }
         Err(_) => {
-            // Return empty data if file doesn't exist yet
             (StatusCode::OK, Json(serde_json::json!({
                 "success": true,
                 "created_at": null,
                 "last_updated": null,
+                "current_month": null,
                 "entries": []
             })))
         }
     }
 }
 
-/// Get server status
 async fn get_status() -> impl IntoResponse {
     Json(serde_json::json!({
         "status": "running",
-        "version": "0.2.0"
+        "version": "0.3.0"
     }))
 }

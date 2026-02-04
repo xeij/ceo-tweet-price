@@ -1,11 +1,11 @@
 //! Daily update script for CI/CD
 //!
 //! Fetches stock prices from Yahoo Finance (free, no API key)
-//! and tweet counts from Twitter (guest mode).
-//! Stores cumulative data in data/tracking.json
+//! and tweet counts from Twitter.
+//! Tracks MONTHLY metrics - resets at the start of each month.
 
 use anyhow::{Context, Result};
-use chrono::Utc;
+use chrono::{Datelike, Utc};
 use serde::{Deserialize, Serialize};
 
 /// CEO/Ticker configuration
@@ -16,25 +16,28 @@ struct CeoConfig {
     company: String,
 }
 
-/// Tracking data for a single CEO/stock pair
+/// Tracking data for a single CEO/stock pair (MONTHLY)
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TrackingEntry {
     ticker: String,
     company: String,
     ceo_handle: String,
 
-    // Baseline (when tracking started)
-    baseline_date: String,
-    baseline_price: f64,
+    // Current month being tracked (e.g., "2026-02")
+    current_month: String,
 
-    // Current values
+    // Price at the start of the month
+    month_start_price: f64,
+
+    // Current price
     current_price: f64,
-    price_change_pct: f64,
+
+    // Monthly price change (%)
+    monthly_price_change_pct: f64,
     price_direction: String, // "up", "down", "flat"
 
-    // Tweet tracking
-    tweet_count_total: u32,
-    tweets_this_week: u32,
+    // Tweet tracking (THIS MONTH)
+    tweets_this_month: u32,
     positive_tweets: u32,
     negative_tweets: u32,
     neutral_tweets: u32,
@@ -48,6 +51,7 @@ struct TrackingEntry {
 struct TrackingDatabase {
     created_at: String,
     last_updated: String,
+    current_month: String,
     entries: Vec<TrackingEntry>,
 }
 
@@ -77,14 +81,22 @@ struct YahooMeta {
 }
 
 #[derive(Debug, Deserialize)]
+#[allow(dead_code)]
 struct YahooError {
     code: String,
     description: String,
 }
 
+fn get_current_month() -> String {
+    Utc::now().format("%Y-%m").to_string()
+}
+
 #[tokio::main]
 async fn main() -> Result<()> {
-    println!("=== CEO Tweet Tracker - Daily Update ===\n");
+    println!("=== CEO Tweet Tracker - Monthly Update ===\n");
+
+    let current_month = get_current_month();
+    println!("Current month: {}", current_month);
 
     // Check for Twitter credentials
     let has_twitter_creds = std::env::var("TWITTER_USERNAME").is_ok()
@@ -104,9 +116,15 @@ async fn main() -> Result<()> {
     println!("Loaded {} CEO/ticker pairs", configs.len());
 
     // Load or create tracking database
-    let mut db = load_or_create_database(&configs)?;
+    let mut db = load_or_create_database(&configs, &current_month)?;
 
-    println!("Tracking database loaded. Last updated: {}\n", db.last_updated);
+    // Check if we need to reset for a new month
+    if db.current_month != current_month {
+        println!("\nNEW MONTH detected! Resetting monthly tracking...");
+        reset_for_new_month(&mut db, &current_month);
+    }
+
+    println!("Tracking month: {}\n", db.current_month);
 
     // Update each entry
     let client = reqwest::Client::builder()
@@ -141,29 +159,31 @@ async fn main() -> Result<()> {
 
         let ticker = entry.ticker.clone();
         let ceo_handle = entry.ceo_handle.clone();
-        let baseline_price = entry.baseline_price;
-        let tweet_count_total = entry.tweet_count_total;
+        let month_start_price = entry.month_start_price;
 
         // Fetch current stock price from Yahoo Finance
         match fetch_yahoo_price(&client, &ticker).await {
             Ok(price) => {
                 let entry = &mut db.entries[idx];
                 entry.current_price = price;
-                if baseline_price > 0.0 {
-                    entry.price_change_pct = ((price - baseline_price) / baseline_price) * 100.0;
-                    entry.price_direction = if entry.price_change_pct > 0.5 {
+
+                if month_start_price > 0.0 {
+                    // Calculate monthly change
+                    entry.monthly_price_change_pct = ((price - month_start_price) / month_start_price) * 100.0;
+                    entry.price_direction = if entry.monthly_price_change_pct > 0.5 {
                         "up".to_string()
-                    } else if entry.price_change_pct < -0.5 {
+                    } else if entry.monthly_price_change_pct < -0.5 {
                         "down".to_string()
                     } else {
                         "flat".to_string()
                     };
                 } else {
-                    // First time - set baseline
-                    entry.baseline_price = price;
-                    entry.baseline_date = Utc::now().format("%Y-%m-%d").to_string();
+                    // First update this month - set start price
+                    entry.month_start_price = price;
+                    entry.monthly_price_change_pct = 0.0;
+                    entry.price_direction = "flat".to_string();
                 }
-                print!("${:.2} ", price);
+                print!("${:.2} ({:+.2}%) ", price, entry.monthly_price_change_pct);
             }
             Err(e) => {
                 print!("price error: {} ", e);
@@ -174,16 +194,14 @@ async fn main() -> Result<()> {
         match fetch_tweet_count(&ceo_handle, twitter_scraper.as_ref()).await {
             Ok((total, positive, negative, neutral)) => {
                 let entry = &mut db.entries[idx];
-                let new_tweets = total.saturating_sub(tweet_count_total);
-                entry.tweets_this_week += new_tweets;
-                entry.tweet_count_total = total;
+                entry.tweets_this_month = total;
                 entry.positive_tweets = positive;
                 entry.negative_tweets = negative;
                 entry.neutral_tweets = neutral;
                 print!("tweets: {} ", total);
             }
             Err(e) => {
-                print!("tweet error: {} ", e);
+                print!("tweet err: {} ", e);
             }
         }
 
@@ -200,11 +218,12 @@ async fn main() -> Result<()> {
 
     println!("\n=== Update complete! ===");
     println!("Data saved to data/tracking.json");
+    println!("Month: {} | Entries: {}", db.current_month, db.entries.len());
 
     Ok(())
 }
 
-fn load_or_create_database(configs: &[CeoConfig]) -> Result<TrackingDatabase> {
+fn load_or_create_database(configs: &[CeoConfig], current_month: &str) -> Result<TrackingDatabase> {
     let path = "data/tracking.json";
 
     if let Ok(content) = std::fs::read_to_string(path) {
@@ -220,13 +239,12 @@ fn load_or_create_database(configs: &[CeoConfig]) -> Result<TrackingDatabase> {
         ticker: c.ticker.clone(),
         company: c.company.clone(),
         ceo_handle: c.ceo_handle.clone(),
-        baseline_date: now.format("%Y-%m-%d").to_string(),
-        baseline_price: 0.0,
+        current_month: current_month.to_string(),
+        month_start_price: 0.0,
         current_price: 0.0,
-        price_change_pct: 0.0,
+        monthly_price_change_pct: 0.0,
         price_direction: "flat".to_string(),
-        tweet_count_total: 0,
-        tweets_this_week: 0,
+        tweets_this_month: 0,
         positive_tweets: 0,
         negative_tweets: 0,
         neutral_tweets: 0,
@@ -236,8 +254,26 @@ fn load_or_create_database(configs: &[CeoConfig]) -> Result<TrackingDatabase> {
     Ok(TrackingDatabase {
         created_at: now.to_rfc3339(),
         last_updated: now.to_rfc3339(),
+        current_month: current_month.to_string(),
         entries,
     })
+}
+
+/// Reset all entries for a new month
+fn reset_for_new_month(db: &mut TrackingDatabase, new_month: &str) {
+    db.current_month = new_month.to_string();
+
+    for entry in &mut db.entries {
+        entry.current_month = new_month.to_string();
+        // Keep current_price as the new month's start price
+        entry.month_start_price = entry.current_price;
+        entry.monthly_price_change_pct = 0.0;
+        entry.price_direction = "flat".to_string();
+        entry.tweets_this_month = 0;
+        entry.positive_tweets = 0;
+        entry.negative_tweets = 0;
+        entry.neutral_tweets = 0;
+    }
 }
 
 fn save_database(db: &TrackingDatabase) -> Result<()> {
@@ -249,7 +285,6 @@ fn save_database(db: &TrackingDatabase) -> Result<()> {
 
 /// Fetch stock price from Yahoo Finance (no API key needed)
 async fn fetch_yahoo_price(client: &reqwest::Client, ticker: &str) -> Result<f64> {
-    // Yahoo Finance chart API - free, no auth required
     let url = format!(
         "https://query1.finance.yahoo.com/v8/finance/chart/{}?interval=1d&range=1d",
         ticker
@@ -296,8 +331,8 @@ async fn init_twitter_scraper() -> Result<Scraper> {
     scraper.login(
         username,
         password,
-        None,  // email
-        None   // two_factor_secret
+        None,
+        None
     ).await.context("Failed to login to Twitter")?;
 
     Ok(scraper)
@@ -307,37 +342,48 @@ async fn init_twitter_scraper() -> Result<Scraper> {
 async fn fetch_tweet_count(handle: &str, scraper: Option<&Scraper>) -> Result<(u32, u32, u32, u32)> {
     let scraper = match scraper {
         Some(s) => s,
-        None => return Ok((0, 0, 0, 0)), // No scraper = no tweets
+        None => return Ok((0, 0, 0, 0)),
     };
 
-    // Get user profile
     let profile = scraper.get_profile(handle).await
         .context("Failed to get Twitter profile")?;
 
-    // Fetch recent tweets (up to 20)
-    let response = scraper.get_user_tweets(&profile.id, 20, None).await
+    // Fetch recent tweets - these should be filtered to current month
+    // but for now we just get the most recent ones
+    let response = scraper.get_user_tweets(&profile.id, 50, None).await
         .context("Failed to fetch tweets")?;
 
-    let tweets = response.tweets;
-    let total = tweets.len() as u32;
+    let now = Utc::now();
+    let current_month = now.month();
+    let current_year = now.year();
 
-    // Simple sentiment analysis
+    let mut total = 0u32;
     let mut positive = 0u32;
     let mut negative = 0u32;
     let mut neutral = 0u32;
 
-    for tweet in &tweets {
-        if let Some(text) = &tweet.text {
-            let sentiment = analyze_sentiment(text);
-            if sentiment > 0.0 {
-                positive += 1;
-            } else if sentiment < 0.0 {
-                negative += 1;
-            } else {
-                neutral += 1;
+    for tweet in &response.tweets {
+        // Filter to current month only
+        if let Some(timestamp) = tweet.timestamp {
+            let tweet_time = chrono::DateTime::from_timestamp(timestamp, 0);
+            if let Some(dt) = tweet_time {
+                if dt.month() == current_month && dt.year() == current_year {
+                    total += 1;
+
+                    if let Some(text) = &tweet.text {
+                        let sentiment = analyze_sentiment(text);
+                        if sentiment > 0.0 {
+                            positive += 1;
+                        } else if sentiment < 0.0 {
+                            negative += 1;
+                        } else {
+                            neutral += 1;
+                        }
+                    } else {
+                        neutral += 1;
+                    }
+                }
             }
-        } else {
-            neutral += 1;
         }
     }
 

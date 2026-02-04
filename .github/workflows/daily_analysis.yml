@@ -1,8 +1,9 @@
-name: Daily Stock & Tweet Tracker
+name: Daily Stock & Tweet Tracker (Monthly)
 
 on:
   schedule:
     # Run at 21:30 UTC (4:30 PM EST) - after US market close
+    # Runs Monday-Friday only
     - cron: '30 21 * * 1-5'
   workflow_dispatch: # Allow manual trigger
 
@@ -41,8 +42,8 @@ jobs:
       - name: Run daily update
         run: ./target/release/daily-update
         env:
-          # Optional: Twitter credentials for tweet fetching
-          # If not set, tweet counts will use cached/placeholder values
+          # Twitter credentials for tweet fetching (optional)
+          # If not set, tweet counts will be 0
           TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
           TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
 
@@ -57,19 +58,28 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
 
-          # Get today's date for commit message
+          # Get current month for commit message
+          MONTH=$(date -u +"%Y-%m")
           DATE=$(date -u +"%Y-%m-%d")
 
           git add data/
-          git commit -m "Daily update: $DATE [skip ci]"
+          git commit -m "Monthly update: $DATE (tracking $MONTH) [skip ci]"
           git push
 
       - name: Summary
         run: |
-          echo "## Daily Update Complete" >> $GITHUB_STEP_SUMMARY
+          echo "## Monthly Update Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- Date: $(date -u +"%Y-%m-%d %H:%M UTC")" >> $GITHUB_STEP_SUMMARY
+          echo "- Tracking Month: $(date -u +"%Y-%m")" >> $GITHUB_STEP_SUMMARY
           if [ -f data/tracking.json ]; then
             ENTRIES=$(jq '.entries | length' data/tracking.json)
+            MONTH=$(jq -r '.current_month' data/tracking.json)
+            echo "- Current Month: $MONTH" >> $GITHUB_STEP_SUMMARY
             echo "- Tracked entries: $ENTRIES" >> $GITHUB_STEP_SUMMARY
           fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### How Monthly Tracking Works" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tweets**: Count of CEO tweets THIS month only" >> $GITHUB_STEP_SUMMARY
+          echo "- **Stock Change**: % change from 1st of month to today" >> $GITHUB_STEP_SUMMARY
+          echo "- **Reset**: All metrics reset on the 1st of each month" >> $GITHUB_STEP_SUMMARY

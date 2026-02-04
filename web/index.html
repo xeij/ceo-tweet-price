@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEO Tweet Tracker</title>
+    <title>CEO Tweet Tracker - Monthly</title>
     <style>
         :root {
             --bg-color: #000000;
             --surface-color: #0a0a0d;
-            --border-color: #ffffff;
+            --border-color: #1a1a1a;
             --text-primary: #fff;
             --text-secondary: #555;
             --accent-color: #3b82f6;
@@ -31,7 +31,7 @@
         }
 
         .container {
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -48,6 +48,16 @@
         h1 {
             font-size: 1.5rem;
             font-weight: 600;
+        }
+
+        .month-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 10px;
         }
 
         .subtitle {
@@ -82,7 +92,6 @@
             border-color: #252528;
         }
 
-        /* Table */
         .table-container {
             overflow-x: auto;
             background: var(--surface-color);
@@ -96,24 +105,24 @@
             text-align: left;
         }
 
-        th,
-        td {
-            padding: 10px 12px;
+        th, td {
+            padding: 12px 15px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        th:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
-            text-align: center;
-        }
-
         th {
-            background: #080809;
+            background: #050507;
             color: var(--text-secondary);
             font-weight: 500;
             cursor: pointer;
             user-select: none;
             position: sticky;
             top: 0;
+            text-align: center;
+        }
+
+        th:first-child, th:nth-child(2), th:nth-child(3) {
+            text-align: left;
         }
 
         th:hover {
@@ -130,7 +139,7 @@
         }
 
         .company-name {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
         }
 
@@ -138,24 +147,16 @@
             color: var(--accent-color);
         }
 
-        .val-pos {
-            color: var(--pos-color);
-        }
-
-        .val-neg {
-            color: var(--neg-color);
-        }
-
-        .val-neu {
-            color: var(--text-secondary);
-        }
+        .val-pos { color: var(--pos-color); }
+        .val-neg { color: var(--neg-color); }
+        .val-neu { color: var(--text-secondary); }
 
         .price-cell {
             font-family: 'SF Mono', Monaco, monospace;
         }
 
         .trend-arrow {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
         .empty-state {
@@ -168,16 +169,18 @@
             margin-bottom: 10px;
             color: var(--text-primary);
         }
+
+        td { text-align: center; }
+        td:first-child, td:nth-child(2), td:nth-child(3) { text-align: left; }
     </style>
 </head>
 
 <body>
-
     <div class="container">
         <header>
             <div>
-                <h1>CEO Tweet Tracker</h1>
-                <p class="subtitle">Weekly tracking of CEO tweets and stock price movements</p>
+                <h1>CEO Tweet Tracker <span class="month-badge" id="monthBadge">-</span></h1>
+                <p class="subtitle">Monthly tracking: Tweets this month & stock price change since 1st</p>
             </div>
             <div class="controls">
                 <span class="last-updated" id="lastUpdated">Loading...</span>
@@ -193,16 +196,15 @@
                         <th onclick="sortTable('company')">Company</th>
                         <th onclick="sortTable('ceo')">CEO</th>
                         <th onclick="sortTable('price')">Price</th>
-                        <th onclick="sortTable('change')">Change</th>
-                        <th onclick="sortTable('tweets')">Tweets</th>
+                        <th onclick="sortTable('change')">Monthly Change</th>
+                        <th onclick="sortTable('tweets')">Tweets (Month)</th>
                         <th onclick="sortTable('positive')">Positive</th>
                         <th onclick="sortTable('negative')">Negative</th>
                         <th onclick="sortTable('neutral')">Neutral</th>
                         <th onclick="sortTable('trend')">Trend</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody">
-                </tbody>
+                <tbody id="tableBody"></tbody>
             </table>
         </div>
 
@@ -225,6 +227,15 @@
 
                 if (json.success && json.entries) {
                     currentData = json.entries;
+
+                    // Update month badge
+                    if (json.current_month) {
+                        const [year, month] = json.current_month.split('-');
+                        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                                          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                        document.getElementById('monthBadge').textContent =
+                            monthNames[parseInt(month) - 1] + ' ' + year;
+                    }
 
                     // Update last updated timestamp
                     if (json.last_updated) {
@@ -252,7 +263,6 @@
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
 
-            // Sort data
             currentData.sort((a, b) => {
                 let valA, valB;
                 switch (sortCol) {
@@ -260,12 +270,12 @@
                     case 'company': valA = a.company; valB = b.company; break;
                     case 'ceo': valA = a.ceo_handle; valB = b.ceo_handle; break;
                     case 'price': valA = a.current_price || 0; valB = b.current_price || 0; break;
-                    case 'change': valA = a.price_change_pct || 0; valB = b.price_change_pct || 0; break;
-                    case 'tweets': valA = a.tweet_count_total || 0; valB = b.tweet_count_total || 0; break;
+                    case 'change': valA = a.monthly_price_change_pct || 0; valB = b.monthly_price_change_pct || 0; break;
+                    case 'tweets': valA = a.tweets_this_month || 0; valB = b.tweets_this_month || 0; break;
                     case 'positive': valA = a.positive_tweets || 0; valB = b.positive_tweets || 0; break;
                     case 'negative': valA = a.negative_tweets || 0; valB = b.negative_tweets || 0; break;
                     case 'neutral': valA = a.neutral_tweets || 0; valB = b.neutral_tweets || 0; break;
-                    case 'trend': valA = a.price_change_pct || 0; valB = b.price_change_pct || 0; break;
+                    case 'trend': valA = a.monthly_price_change_pct || 0; valB = b.monthly_price_change_pct || 0; break;
                     default: valA = a.ticker; valB = b.ticker;
                 }
                 if (valA < valB) return sortAsc ? -1 : 1;
@@ -276,15 +286,13 @@
             currentData.forEach(row => {
                 const tr = document.createElement('tr');
 
-                // Format price change
                 const fmtChange = (val) => {
-                    if (val === null || val === undefined || val === 0) return '<span style="color:#1a1a1a">-</span>';
+                    if (val === null || val === undefined) return '<span style="color:#1a1a1a">-</span>';
                     const cls = val > 0 ? 'val-pos' : val < 0 ? 'val-neg' : 'val-neu';
                     const sign = val > 0 ? '+' : '';
                     return `<span class="${cls}">${sign}${val.toFixed(2)}%</span>`;
                 };
 
-                // Trend arrow
                 const getTrend = (direction, pct) => {
                     if (!direction || direction === 'flat') return '<span style="color:#252528">—</span>';
                     if (direction === 'up') {
@@ -295,24 +303,23 @@
                         '<span class="val-neg trend-arrow">▼</span>';
                 };
 
-                // Format price
                 const fmtPrice = (val) => {
                     if (!val || val === 0) return '<span style="color:#1a1a1a">-</span>';
                     return `$${val.toFixed(2)}`;
                 };
 
                 tr.innerHTML = `
-                <td><span class="ticker-symbol">${row.ticker}</span></td>
-                <td><span class="company-name">${row.company}</span></td>
-                <td><span class="ceo-handle">@${row.ceo_handle}</span></td>
-                <td class="price-cell" style="text-align:center">${fmtPrice(row.current_price)}</td>
-                <td style="text-align:center">${fmtChange(row.price_change_pct)}</td>
-                <td style="text-align:center">${row.tweet_count_total || 0}</td>
-                <td style="text-align:center"><span class="val-pos">${row.positive_tweets || 0}</span></td>
-                <td style="text-align:center"><span class="val-neg">${row.negative_tweets || 0}</span></td>
-                <td style="text-align:center"><span style="color:#454548">${row.neutral_tweets || 0}</span></td>
-                <td style="text-align:center">${getTrend(row.price_direction, row.price_change_pct)}</td>
-            `;
+                    <td><span class="ticker-symbol">${row.ticker}</span></td>
+                    <td><span class="company-name">${row.company}</span></td>
+                    <td><span class="ceo-handle">@${row.ceo_handle}</span></td>
+                    <td class="price-cell">${fmtPrice(row.current_price)}</td>
+                    <td>${fmtChange(row.monthly_price_change_pct)}</td>
+                    <td>${row.tweets_this_month || 0}</td>
+                    <td><span class="val-pos">${row.positive_tweets || 0}</span></td>
+                    <td><span class="val-neg">${row.negative_tweets || 0}</span></td>
+                    <td><span style="color:#454548">${row.neutral_tweets || 0}</span></td>
+                    <td>${getTrend(row.price_direction, row.monthly_price_change_pct)}</td>
+                `;
                 tbody.appendChild(tr);
             });
         }
@@ -327,10 +334,7 @@
             renderTable();
         }
 
-        // Initial load
         loadData();
     </script>
-
 </body>
-
 </html>
