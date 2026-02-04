@@ -1,33 +1,29 @@
-name: Daily Analysis
+name: Daily Stock & Tweet Tracker
 
 on:
   schedule:
-    # Run daily at 00:00 UTC
-    - cron: '0 0 * * *'
+    # Run at 21:30 UTC (4:30 PM EST) - after US market close
+    - cron: '30 21 * * 1-5'
   workflow_dispatch: # Allow manual trigger
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  analyze_and_commit:
+  update_tracking:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Needed to push changes
-      
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
+        uses: dtolnay/rust-toolchain@stable
 
-      - name: Restore Cache
-        uses: actions/cache@v3
+      - name: Cache cargo
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -39,22 +35,41 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-
 
-      - name: Run Analysis
+      - name: Build daily-update binary
+        run: cargo build --release --bin daily-update
+
+      - name: Run daily update
+        run: ./target/release/daily-update
         env:
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-          STOCK_API_KEY: ${{ secrets.STOCK_API_KEY }}
-        run: cargo run --bin run_batch
+          # Optional: Twitter credentials for tweet fetching
+          # If not set, tweet counts will use cached/placeholder values
+          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
+          TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
 
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code data/results.json || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --quiet data/ || echo "changes=true" >> $GITHUB_OUTPUT
 
-      - name: Commit and Push Results
+      - name: Commit and push results
         if: steps.git-check.outputs.changes == 'true'
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git add data/results.json
-          git commit -m "Update analysis results [skip ci]"
+
+          # Get today's date for commit message
+          DATE=$(date -u +"%Y-%m-%d")
+
+          git add data/
+          git commit -m "Daily update: $DATE [skip ci]"
           git push
+
+      - name: Summary
+        run: |
+          echo "## Daily Update Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Date: $(date -u +"%Y-%m-%d %H:%M UTC")" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/tracking.json ]; then
+            ENTRIES=$(jq '.entries | length' data/tracking.json)
+            echo "- Tracked entries: $ENTRIES" >> $GITHUB_STEP_SUMMARY
+          fi

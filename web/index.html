@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CEO Tweet Analyzer - Watchlist</title>
+    <title>CEO Tweet Tracker</title>
     <style>
         :root {
-            --bg-color: #0d0d10;
-            --surface-color: #1a1a20;
-            --border-color: #333;
+            --bg-color: #050507;
+            --surface-color: #0a0a0d;
+            --border-color: #151518;
             --text-primary: #fff;
-            --text-secondary: #888;
+            --text-secondary: #555;
             --accent-color: #3b82f6;
             --pos-color: #22c55e;
-            /* Green */
             --neg-color: #ef4444;
-            /* Red */
         }
 
         * {
@@ -58,9 +56,15 @@
             margin-top: 5px;
         }
 
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
         .controls {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
         button {
@@ -74,22 +78,11 @@
         }
 
         button:hover {
-            background: #2a2a30;
-            border-color: #555;
+            background: #151518;
+            border-color: #252528;
         }
 
-        .primary-btn {
-            background: var(--text-primary);
-            color: var(--bg-color);
-            border: none;
-            font-weight: 600;
-        }
-
-        .primary-btn:hover {
-            background: #ddd;
-        }
-
-        /* Watchlist Table */
+        /* Table */
         .table-container {
             overflow-x: auto;
             background: var(--surface-color);
@@ -105,12 +98,16 @@
 
         th,
         td {
-            padding: 12px 15px;
+            padding: 10px 12px;
             border-bottom: 1px solid var(--border-color);
         }
 
+        th:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
+            text-align: center;
+        }
+
         th {
-            background: #111;
+            background: #080809;
             color: var(--text-secondary);
             font-weight: 500;
             cursor: pointer;
@@ -127,44 +124,18 @@
             background: rgba(255, 255, 255, 0.02);
         }
 
-        .ticker-cell {
-            display: flex;
-            flex-direction: column;
-        }
-
         .ticker-symbol {
             font-weight: bold;
             font-size: 1rem;
         }
 
         .company-name {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
         }
 
         .ceo-handle {
             color: var(--accent-color);
-        }
-
-        /* Sentiment Bar */
-        .sentiment-bar {
-            display: flex;
-            height: 6px;
-            width: 100px;
-            background: #333;
-            margin-top: 5px;
-        }
-
-        .bar-pos {
-            background: var(--pos-color);
-        }
-
-        .bar-neg {
-            background: var(--neg-color);
-        }
-
-        .bar-neu {
-            background: #555;
         }
 
         .val-pos {
@@ -179,33 +150,23 @@
             color: var(--text-secondary);
         }
 
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 1000;
+        .price-cell {
+            font-family: 'SF Mono', Monaco, monospace;
         }
 
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid #333;
-            border-top-color: #fff;
-            animation: spin 1s linear infinite;
-            margin-bottom: 15px;
+        .trend-arrow {
+            font-size: 1.2em;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h2 {
+            margin-bottom: 10px;
+            color: var(--text-primary);
         }
     </style>
 </head>
@@ -215,12 +176,12 @@
     <div class="container">
         <header>
             <div>
-                <h1>CEO Tweet Watchlist</h1>
-                <p class="subtitle">Correlation analysis of 25 Top CEO/Stock pairs</p>
+                <h1>CEO Tweet Tracker</h1>
+                <p class="subtitle">Weekly tracking of CEO tweets and stock price movements</p>
             </div>
             <div class="controls">
-                <button onclick="loadResults()">Refresh Data</button>
-                <button class="primary-btn" onclick="runAnalysis()">Run Analysis</button>
+                <span class="last-updated" id="lastUpdated">Loading...</span>
+                <button onclick="loadData()">Refresh</button>
             </div>
         </header>
 
@@ -229,24 +190,27 @@
                 <thead>
                     <tr>
                         <th onclick="sortTable('ticker')">Stock</th>
+                        <th onclick="sortTable('company')">Company</th>
                         <th onclick="sortTable('ceo')">CEO</th>
-                        <th onclick="sortTable('tweets')">Tweet Volume</th>
-                        <th onclick="sortTable('corr')">Correlation (1d)</th>
-                        <th onclick="sortTable('perf1w')">Perf 1W</th>
-                        <th onclick="sortTable('perf1m')">Perf 1M</th>
-                        <th onclick="sortTable('perf3m')">Perf 3M</th>
+                        <th onclick="sortTable('price')">Price</th>
+                        <th onclick="sortTable('change')">Change</th>
+                        <th onclick="sortTable('tweets')">Tweets</th>
+                        <th onclick="sortTable('positive')">Positive</th>
+                        <th onclick="sortTable('negative')">Negative</th>
+                        <th onclick="sortTable('neutral')">Neutral</th>
+                        <th onclick="sortTable('trend')">Trend</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <!-- Rows will be injected here -->
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="spinner"></div>
-        <div id="loadingText">Analyzing market data...</div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <h2>No Data Yet</h2>
+            <p>Data will be populated automatically via CI/CD each weekday after market close.</p>
+            <p>Run <code>cargo run --bin daily-update</code> to populate data manually.</p>
+        </div>
     </div>
 
     <script>
@@ -254,38 +218,33 @@
         let sortCol = 'ticker';
         let sortAsc = true;
 
-        async function loadResults() {
+        async function loadData() {
             try {
-                const res = await fetch('/api/results');
-                const data = await res.json();
-                currentData = data;
-                renderTable();
-            } catch (e) {
-                console.error(e);
-            }
-        }
+                const res = await fetch('/api/data');
+                const json = await res.json();
 
-        async function runAnalysis() {
-            const overlay = document.getElementById('loadingOverlay');
-            const text = document.getElementById('loadingText');
+                if (json.success && json.entries) {
+                    currentData = json.entries;
 
-            overlay.style.display = 'flex';
-            text.textContent = "Running analysis on 25 companies... (This may take a moment)";
+                    // Update last updated timestamp
+                    if (json.last_updated) {
+                        const date = new Date(json.last_updated);
+                        document.getElementById('lastUpdated').textContent =
+                            'Updated: ' + date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+                    }
 
-            try {
-                const res = await fetch('/api/analyze', { method: 'POST' });
-                const result = await res.json();
-                if (result.success) {
-                    text.textContent = "Analysis complete!";
-                    await loadResults();
-                    setTimeout(() => overlay.style.display = 'none', 1000);
-                } else {
-                    alert('Analysis failed: ' + result.error);
-                    overlay.style.display = 'none';
+                    if (currentData.length === 0) {
+                        document.getElementById('emptyState').style.display = 'block';
+                        document.querySelector('.table-container').style.display = 'none';
+                    } else {
+                        document.getElementById('emptyState').style.display = 'none';
+                        document.querySelector('.table-container').style.display = 'block';
+                        renderTable();
+                    }
                 }
             } catch (e) {
-                alert('Error: ' + e);
-                overlay.style.display = 'none';
+                console.error('Failed to load data:', e);
+                document.getElementById('lastUpdated').textContent = 'Error loading data';
             }
         }
 
@@ -298,12 +257,16 @@
                 let valA, valB;
                 switch (sortCol) {
                     case 'ticker': valA = a.ticker; valB = b.ticker; break;
+                    case 'company': valA = a.company; valB = b.company; break;
                     case 'ceo': valA = a.ceo_handle; valB = b.ceo_handle; break;
-                    case 'tweets': valA = a.total_tweets; valB = b.total_tweets; break;
-                    case 'corr': valA = a.correlation_1d || 0; valB = b.correlation_1d || 0; break;
-                    case 'perf1w': valA = a.performance_1w || -999; valB = b.performance_1w || -999; break;
-                    case 'perf1m': valA = a.performance_1m || -999; valB = b.performance_1m || -999; break;
-                    case 'perf3m': valA = a.performance_3m || -999; valB = b.performance_3m || -999; break;
+                    case 'price': valA = a.current_price || 0; valB = b.current_price || 0; break;
+                    case 'change': valA = a.price_change_pct || 0; valB = b.price_change_pct || 0; break;
+                    case 'tweets': valA = a.tweet_count_total || 0; valB = b.tweet_count_total || 0; break;
+                    case 'positive': valA = a.positive_tweets || 0; valB = b.positive_tweets || 0; break;
+                    case 'negative': valA = a.negative_tweets || 0; valB = b.negative_tweets || 0; break;
+                    case 'neutral': valA = a.neutral_tweets || 0; valB = b.neutral_tweets || 0; break;
+                    case 'trend': valA = a.price_change_pct || 0; valB = b.price_change_pct || 0; break;
+                    default: valA = a.ticker; valB = b.ticker;
                 }
                 if (valA < valB) return sortAsc ? -1 : 1;
                 if (valA > valB) return sortAsc ? 1 : -1;
@@ -313,50 +276,42 @@
             currentData.forEach(row => {
                 const tr = document.createElement('tr');
 
-                // Format percentage
-                const fmtPct = (val) => {
-                    if (val === null || val === undefined) return '<span style="color:#444">-</span>';
+                // Format price change
+                const fmtChange = (val) => {
+                    if (val === null || val === undefined || val === 0) return '<span style="color:#1a1a1a">-</span>';
                     const cls = val > 0 ? 'val-pos' : val < 0 ? 'val-neg' : 'val-neu';
                     const sign = val > 0 ? '+' : '';
                     return `<span class="${cls}">${sign}${val.toFixed(2)}%</span>`;
                 };
 
-                // Calculate widths for sentiment bar
-                const total = row.total_tweets || 1; // avoid div by zero
-                const wPos = ((row.positive_tweets || 0) / total) * 100;
-                const wNeg = ((row.negative_tweets || 0) / total) * 100;
-                const wNeu = ((row.neutral_tweets || 0) / total) * 100;
+                // Trend arrow
+                const getTrend = (direction, pct) => {
+                    if (!direction || direction === 'flat') return '<span style="color:#252528">—</span>';
+                    if (direction === 'up') {
+                        return pct > 5 ? '<span class="val-pos trend-arrow">▲▲</span>' :
+                            '<span class="val-pos trend-arrow">▲</span>';
+                    }
+                    return pct < -5 ? '<span class="val-neg trend-arrow">▼▼</span>' :
+                        '<span class="val-neg trend-arrow">▼</span>';
+                };
+
+                // Format price
+                const fmtPrice = (val) => {
+                    if (!val || val === 0) return '<span style="color:#1a1a1a">-</span>';
+                    return `$${val.toFixed(2)}`;
+                };
 
                 tr.innerHTML = `
-                <td>
-                    <div class="ticker-cell">
-                        <span class="ticker-symbol">${row.ticker}</span>
-                        <span class="company-name">Company</span>
-                    </div>
-                </td>
+                <td><span class="ticker-symbol">${row.ticker}</span></td>
+                <td><span class="company-name">${row.company}</span></td>
                 <td><span class="ceo-handle">@${row.ceo_handle}</span></td>
-                <td>
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:2px;">
-                        <span>${row.total_tweets} total</span>
-                        <span class="val-pos">${row.positive_tweets || 0}</span>
-                    </div>
-                    <div class="sentiment-bar">
-                        <div class="bar-pos" style="width:${wPos}%"></div>
-                        <div class="bar-neu" style="width:${wNeu}%"></div>
-                        <div class="bar-neg" style="width:${wNeg}%"></div>
-                    </div>
-                </td>
-                <td>
-                    ${row.correlation_1d !== null ?
-                        `<span style="font-weight:bold; color:${row.correlation_1d > 0.3 ? 'var(--pos-color)' : row.correlation_1d < -0.3 ? 'var(--neg-color)' : '#888'}">
-                            ${row.correlation_1d.toFixed(3)}
-                        </span>` :
-                        '<span style="color:#444">N/A</span>'
-                    }
-                </td>
-                <td>${fmtPct(row.performance_1w)}</td>
-                <td>${fmtPct(row.performance_1m)}</td>
-                <td>${fmtPct(row.performance_3m)}</td>
+                <td class="price-cell" style="text-align:center">${fmtPrice(row.current_price)}</td>
+                <td style="text-align:center">${fmtChange(row.price_change_pct)}</td>
+                <td style="text-align:center">${row.tweet_count_total || 0}</td>
+                <td style="text-align:center"><span class="val-pos">${row.positive_tweets || 0}</span></td>
+                <td style="text-align:center"><span class="val-neg">${row.negative_tweets || 0}</span></td>
+                <td style="text-align:center"><span style="color:#454548">${row.neutral_tweets || 0}</span></td>
+                <td style="text-align:center">${getTrend(row.price_direction, row.price_change_pct)}</td>
             `;
                 tbody.appendChild(tr);
             });
@@ -372,8 +327,8 @@
             renderTable();
         }
 
-        // Init
-        loadResults();
+        // Initial load
+        loadData();
     </script>
 
 </body>

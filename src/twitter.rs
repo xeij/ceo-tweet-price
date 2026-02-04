@@ -5,7 +5,7 @@
 
 use crate::models::Tweet;
 use anyhow::{Context, Result};
-use chrono::{DateTime, Duration, Utc};
+use chrono::{DateTime, Utc};
 use serde::Deserialize;
 
 /// Twitter API v2 base URL
@@ -74,46 +74,40 @@ async fn fetch_tweets_scraper(
     password: Option<&str>,
     verbose: bool
 ) -> Result<Vec<Tweet>> {
-    // Note: This relies on agent-twitter-client crate
-    // We assume standard usage: Scraper::new(), login(), get_tweets()
-    // The struct seems to be in the 'scraper' module based on error 'no Scraper in root'
     use agent_twitter_client::scraper::Scraper;
 
     let mut scraper = Scraper::new().await?;
-    
+
     if let (Some(u), Some(p)) = (username, password) {
         if verbose { println!("  → Logging in as {}", u); }
-        scraper.login(u, p).await.context("Failed to login to Twitter")?;
+        scraper.login(
+            u.to_string(),
+            p.to_string(),
+            None,  // email
+            None   // two_factor_secret
+        ).await.context("Failed to login to Twitter")?;
     } else {
-        if verbose { println!("  → Attempting guest access (may specific limits)"); }
+        if verbose { println!("  → Attempting guest access (may have limits)"); }
     }
 
     let max_tweets = 50;
     if verbose { println!("  → Scraping latest {} tweets...", max_tweets); }
 
-    // First we need user ID.
-    // Based on typical scraping lib patterns, get_profile usually returns user info
+    // Get user profile to obtain user_id
     let profile = scraper.get_profile(handle).await.context("Failed to get profile")?;
-    // We'll guess the field is 'id' or 'user_id' or 'rest_id'. 
-    // Let's try 'id' first, or 'user_id' if 'id' is distinct.
-    // If this fails compile, we'll see the available fields in the error message.
-    let user_id = profile.id.clone(); 
-    
-    // Fetch tweets
-    // Type might be string or enum. Assuming enum based on previous code.
-    // If TweetType is not found, we'll see error.
-    let type_enum = agent_twitter_client::TweetType::Tweets; 
-    
-    let scraper_tweets = scraper.get_tweets(
-        &user_id, 
-        type_enum, 
-        max_tweets as usize
+    let user_id = profile.id.clone();
+
+    // Fetch tweets using get_user_tweets
+    let scraper_tweets = scraper.get_user_tweets(
+        &user_id,
+        max_tweets as i32,
+        None  // cursor
     ).await.context("Failed to scrape tweets")?;
 
     let mut tweets = Vec::new();
-    for t in scraper_tweets.tweets { // assuming result wrapper has 'tweets' field, or it IS a vec
+    for t in scraper_tweets.tweets {
          let created_at = if let Some(ts) = t.timestamp {
-             DateTime::<Utc>::from_timestamp(ts as i64, 0).unwrap_or(Utc::now())
+             DateTime::<Utc>::from_timestamp(ts, 0).unwrap_or(Utc::now())
          } else {
              Utc::now()
          };

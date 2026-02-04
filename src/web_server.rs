@@ -1,91 +1,54 @@
-//! Web server for CEO Tweet Analyzer dashboard
+//! Web server for CEO Tweet Tracker dashboard
 //!
-//! Serves a web UI and provides API endpoints for analysis data
+//! Serves a web UI showing tracked CEO tweets and stock prices.
+//! Data is updated daily via CI/CD and stored in data/tracking.json
 
 use axum::{
-    extract::State,
     http::StatusCode,
     response::{Html, IntoResponse, Json},
-    routing::{get, post},
+    routing::get,
     Router,
 };
 use serde::{Deserialize, Serialize};
-use std::sync::Arc;
-use tokio::sync::RwLock;
-use tower_http::{cors::CorsLayer, services::ServeDir};
+use tower_http::cors::CorsLayer;
 
-mod analysis;
-mod models;
-mod prolog;
-mod storage;
-mod stocks;
-mod twitter;
-
-use models::AnalysisResult;
-
-/// CEO/Ticker configuration
+/// Tracking data for a single CEO/stock pair
 #[derive(Debug, Clone, Serialize, Deserialize)]
-struct CeoConfig {
-    ceo_handle: String,
+struct TrackingEntry {
     ticker: String,
     company: String,
+    ceo_handle: String,
+    baseline_date: String,
+    baseline_price: f64,
+    current_price: f64,
+    price_change_pct: f64,
+    price_direction: String,
+    tweet_count_total: u32,
+    tweets_this_week: u32,
+    positive_tweets: u32,
+    negative_tweets: u32,
+    neutral_tweets: u32,
+    last_updated: String,
 }
 
-/// Application state
-#[derive(Clone)]
-struct AppState {
-    results: Arc<RwLock<Vec<AnalysisResult>>>,
-    twitter_token: Option<String>,
-    twitter_username: Option<String>,
-    twitter_password: Option<String>,
-    stock_api_key: String,
+/// Full tracking database
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct TrackingDatabase {
+    created_at: String,
+    last_updated: String,
+    entries: Vec<TrackingEntry>,
 }
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    println!("Starting CEO Tweet Analyzer Web Server...\n");
-
-    // Get API keys from environment
-    let twitter_token = std::env::var("TWITTER_BEARER_TOKEN").ok();
-    let twitter_username = std::env::var("TWITTER_USERNAME").ok();
-    let twitter_password = std::env::var("TWITTER_PASSWORD").ok();
-    
-    if twitter_token.is_none() && (twitter_username.is_none() || twitter_password.is_none()) {
-        println!("WARNING: Neither TWITTER_BEARER_TOKEN nor TWITTER_USERNAME/PASSWORD are set.");
-        println!("         Fetching tweets might fail.");
-    }
-
-    let stock_api_key = std::env::var("STOCK_API_KEY")
-        .expect("STOCK_API_KEY environment variable not set");
-
-    // Load existing results
-    let cached_results = storage::load_results().unwrap_or_else(|e| {
-        println!("No existing data found or failed to load: {}", e);
-        Vec::new()
-    });
-    
-    if !cached_results.is_empty() {
-        println!("Loaded {} existing analysis results from disk", cached_results.len());
-    }
-
-    // Initialize app state
-    let state = AppState {
-        results: Arc::new(RwLock::new(cached_results)),
-        twitter_token,
-        twitter_username,
-        twitter_password,
-        stock_api_key,
-    };
+    println!("Starting CEO Tweet Tracker Web Server...\n");
 
     // Build router
     let app = Router::new()
         .route("/", get(serve_index))
-        .route("/api/analyze", post(run_analysis))
-        .route("/api/results", get(get_results))
+        .route("/api/data", get(get_tracking_data))
         .route("/api/status", get(get_status))
-        .nest_service("/static", ServeDir::new("web/static"))
-        .layer(CorsLayer::permissive())
-        .with_state(state);
+        .layer(CorsLayer::permissive());
 
     // Start server
     let addr = "127.0.0.1:3000";
@@ -103,149 +66,39 @@ async fn serve_index() -> impl IntoResponse {
     Html(include_str!("../web/index.html"))
 }
 
-/// Get current analysis results
-async fn get_results(State(state): State<AppState>) -> impl IntoResponse {
-    let results = state.results.read().await;
-    Json(results.clone())
+/// Get tracking data from JSON file
+async fn get_tracking_data() -> impl IntoResponse {
+    match std::fs::read_to_string("data/tracking.json") {
+        Ok(content) => {
+            match serde_json::from_str::<TrackingDatabase>(&content) {
+                Ok(db) => (StatusCode::OK, Json(serde_json::json!({
+                    "success": true,
+                    "created_at": db.created_at,
+                    "last_updated": db.last_updated,
+                    "entries": db.entries
+                }))),
+                Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, Json(serde_json::json!({
+                    "success": false,
+                    "error": format!("Failed to parse tracking data: {}", e)
+                }))),
+            }
+        }
+        Err(_) => {
+            // Return empty data if file doesn't exist yet
+            (StatusCode::OK, Json(serde_json::json!({
+                "success": true,
+                "created_at": null,
+                "last_updated": null,
+                "entries": []
+            })))
+        }
+    }
 }
 
 /// Get server status
 async fn get_status() -> impl IntoResponse {
     Json(serde_json::json!({
         "status": "running",
-        "version": "0.1.0"
+        "version": "0.2.0"
     }))
-}
-
-/// Run analysis for all configured CEOs
-async fn run_analysis(State(state): State<AppState>) -> impl IntoResponse {
-    println!("Starting batch analysis...");
-
-    // Load CEO configuration
-    let config_str = match std::fs::read_to_string("ceo_config.json") {
-        Ok(s) => s,
-        Err(e) => {
-            eprintln!("ERROR: Failed to read ceo_config.json: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(serde_json::json!({ "error": "Failed to read configuration" })),
-            );
-        }
-    };
-
-    let configs: Vec<CeoConfig> = match serde_json::from_str(&config_str) {
-        Ok(c) => c,
-        Err(e) => {
-            eprintln!("ERROR: Failed to parse ceo_config.json: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(serde_json::json!({ "error": "Failed to parse configuration" })),
-            );
-        }
-    };
-
-    println!("Loaded {} CEO/ticker pairs", configs.len());
-
-    let mut results = Vec::new();
-    let days = 90; // this will be used for price history, but tweet count is strictly limited in twitter.rs
-
-    // Process each CEO (limit to first 25)
-    for (idx, config) in configs.iter().take(25).enumerate() {
-        println!(
-            "  [{}/25] Analyzing @{} / {}...",
-            idx + 1,
-            config.ceo_handle,
-            config.ticker
-        );
-
-        // Fetch tweets
-        let tweets = match twitter::fetch_tweets(
-            &config.ceo_handle,
-            state.twitter_token.as_deref(),
-            state.twitter_username.as_deref(),
-            state.twitter_password.as_deref(),
-            days,
-            false,
-        )
-        .await
-        {
-            Ok(t) => t,
-            Err(e) => {
-                eprintln!("    WARNING: Failed to fetch tweets: {}", e);
-                // Continue to next CEO on error
-                continue;
-            }
-        };
-
-        if tweets.is_empty() {
-            println!("    WARNING: No tweets found");
-            continue;
-        }
-
-        // Fetch stock prices
-        let prices = match stocks::fetch_prices(&config.ticker, &state.stock_api_key, days, false)
-            .await
-        {
-            Ok(p) => p,
-            Err(e) => {
-                eprintln!("    WARNING: Failed to fetch prices: {}", e);
-                continue;
-            }
-        };
-
-        if prices.is_empty() {
-            println!("    WARNING: No price data found");
-            continue;
-        }
-
-        // Analyze
-        let mut result = match analysis::analyze(
-            &config.ceo_handle,
-            &config.ticker,
-            tweets,
-            prices,
-            false,
-        ) {
-            Ok(r) => r,
-            Err(e) => {
-                eprintln!("    WARNING: Analysis failed: {}", e);
-                continue;
-            }
-        };
-
-        // Apply Prolog rules
-        if let Err(e) = prolog::apply_rules(&mut result, None) {
-            eprintln!("    WARNING: Prolog rules failed: {}", e);
-        }
-
-        println!(
-            "    SUCCESS: Correlation: {:.3}, Tweets: {}",
-            result.correlation_1d.unwrap_or(0.0),
-            result.total_tweets
-        );
-
-        results.push(result);
-
-        // Rate limiting: wait between requests
-        tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
-    }
-
-    // Store results
-    let mut state_results = state.results.write().await;
-    *state_results = results.clone();
-
-    // Save to disk
-    if let Err(e) = storage::save_results(&results) {
-        eprintln!("ERROR: Failed to save results to disk: {}", e);
-    } else {
-        println!("Saved analysis results to data/results.json");
-    }
-
-    println!("\nBatch analysis complete! Analyzed {} companies\n", results.len());
-
-    (StatusCode::OK, Json(serde_json::json!({
-        "success": true,
-        "analyzed": results.len(),
-        "message": format!("Successfully analyzed {} companies", results.len())
-    })))
 }

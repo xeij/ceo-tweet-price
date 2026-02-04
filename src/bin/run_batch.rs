@@ -30,12 +30,19 @@ async fn main() -> Result<()> {
     println!("Starting CEO Tweet Analyzer Batch Runner...");
 
     // Get API keys
-    let twitter_token = std::env::var("TWITTER_BEARER_TOKEN")
-        .expect("TWITTER_BEARER_TOKEN environment variable not set");
+    let twitter_token = std::env::var("TWITTER_BEARER_TOKEN").ok();
+    let twitter_username = std::env::var("TWITTER_USERNAME").ok();
+    let twitter_password = std::env::var("TWITTER_PASSWORD").ok();
+    
+    if twitter_token.is_none() && (twitter_username.is_none() || twitter_password.is_none()) {
+         println!("WARNING: No Twitter credentials found (API token or username/password).");
+    }
+
     let stock_api_key = std::env::var("STOCK_API_KEY")
         .expect("STOCK_API_KEY environment variable not set");
 
     // Load configuration
+    // ... (lines 38-48 match existing, skipping for brevity in replacement if possible, but I must replace contiguous block)
     let config_str = std::fs::read_to_string("ceo_config.json")
         .expect("Failed to read ceo_config.json");
     let configs: Vec<CeoConfig> = serde_json::from_str(&config_str)
@@ -58,7 +65,9 @@ async fn main() -> Result<()> {
         // Fetch tweets
         let tweets = match twitter::fetch_tweets(
             &config.ceo_handle,
-            &twitter_token,
+            twitter_token.as_deref(),
+            twitter_username.as_deref(),
+            twitter_password.as_deref(),
             days,
             false,
         ).await {
