@@ -46,7 +46,7 @@
     },
     {
         "ceo_handle": "jack",
-        "ticker": "SQ",
+        "ticker": "XYZ",
         "company": "Block"
     },
     {
@@ -65,14 +65,14 @@
         "company": "Uber"
     },
     {
-        "ceo_handle": "reedhaslam",
-        "ticker": "NFLX",
-        "company": "Netflix"
+        "ceo_handle": "Benioff",
+        "ticker": "CRM",
+        "company": "Salesforce"
     },
     {
-        "ceo_handle": "mcuban",
-        "ticker": "COST",
-        "company": "Costco"
+        "ceo_handle": "AlexKarp",
+        "ticker": "PLTR",
+        "company": "Palantir"
     },
     {
         "ceo_handle": "richardbranson",
@@ -81,7 +81,7 @@
     },
     {
         "ceo_handle": "WarrenBuffett",
-        "ticker": "BRK.B",
+        "ticker": "BRK-B",
         "company": "Berkshire Hathaway"
     },
     {
@@ -106,22 +106,22 @@
     },
     {
         "ceo_handle": "BillAckman",
-        "ticker": "PSH",
+        "ticker": "PSH.L",
         "company": "Pershing Square"
     },
     {
-        "ceo_handle": "Carl_C_Icahn",
-        "ticker": "IEP",
-        "company": "Icahn Enterprises"
+        "ceo_handle": "PGelsinger",
+        "ticker": "INTC",
+        "company": "Intel"
     },
     {
-        "ceo_handle": "RayDalio",
-        "ticker": "SPY",
-        "company": "Bridgewater"
+        "ceo_handle": "RobertIger",
+        "ticker": "DIS",
+        "company": "Disney"
     },
     {
-        "ceo_handle": "jimcramer",
-        "ticker": "SPY",
-        "company": "CNBC/Market Commentary"
+        "ceo_handle": "DougMcMillon",
+        "ticker": "WMT",
+        "company": "Walmart"
     }
 ]

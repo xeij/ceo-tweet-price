@@ -86,6 +86,15 @@ struct YahooError {
 async fn main() -> Result<()> {
     println!("=== CEO Tweet Tracker - Daily Update ===\n");
 
+    // Check for Twitter credentials
+    let has_twitter_creds = std::env::var("TWITTER_USERNAME").is_ok()
+        && std::env::var("TWITTER_PASSWORD").is_ok();
+
+    if !has_twitter_creds {
+        println!("NOTE: TWITTER_USERNAME/PASSWORD not set - tweet counts will be 0");
+        println!("      Set these env vars to enable tweet tracking\n");
+    }
+
     // Load CEO configuration
     let config_str = std::fs::read_to_string("ceo_config.json")
         .context("Failed to read ceo_config.json")?;
@@ -103,6 +112,22 @@ async fn main() -> Result<()> {
     let client = reqwest::Client::builder()
         .user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
         .build()?;
+
+    // Initialize Twitter scraper if credentials available
+    let twitter_scraper = if has_twitter_creds {
+        match init_twitter_scraper().await {
+            Ok(scraper) => {
+                println!("Twitter: Logged in successfully\n");
+                Some(scraper)
+            }
+            Err(e) => {
+                println!("Twitter: Login failed - {}\n", e);
+                None
+            }
+        }
+    } else {
+        None
+    };
 
     let total_entries = db.entries.len();
     for idx in 0..total_entries {
@@ -145,9 +170,8 @@ async fn main() -> Result<()> {
             }
         }
 
-        // Fetch tweet count (simplified - just increment for demo)
-        // In production, this would call the Twitter scraper
-        match fetch_tweet_count(&ceo_handle).await {
+        // Fetch tweet count
+        match fetch_tweet_count(&ceo_handle, twitter_scraper.as_ref()).await {
             Ok((total, positive, negative, neutral)) => {
                 let entry = &mut db.entries[idx];
                 let new_tweets = total.saturating_sub(tweet_count_total);
@@ -257,15 +281,99 @@ async fn fetch_yahoo_price(client: &reqwest::Client, ticker: &str) -> Result<f64
         .context("No price in Yahoo Finance response")
 }
 
-/// Fetch tweet count for a user (simplified version)
-/// In production, this would use the Twitter scraper
-async fn fetch_tweet_count(_handle: &str) -> Result<(u32, u32, u32, u32)> {
-    // For CI/CD without Twitter credentials, we'll use a simple approach:
-    // Try to fetch via nitter or return cached/estimated values
+use agent_twitter_client::scraper::Scraper;
 
-    // For now, return placeholder values that can be updated when Twitter access is available
-    // The real implementation would use agent_twitter_client::scraper::Scraper
+/// Initialize Twitter scraper with login
+async fn init_twitter_scraper() -> Result<Scraper> {
+    let username = std::env::var("TWITTER_USERNAME")
+        .context("TWITTER_USERNAME not set")?;
+    let password = std::env::var("TWITTER_PASSWORD")
+        .context("TWITTER_PASSWORD not set")?;
 
-    // Return (total, positive, negative, neutral) - placeholder for now
-    Ok((0, 0, 0, 0))
+    let mut scraper = Scraper::new().await
+        .context("Failed to create Twitter scraper")?;
+
+    scraper.login(
+        username,
+        password,
+        None,  // email
+        None   // two_factor_secret
+    ).await.context("Failed to login to Twitter")?;
+
+    Ok(scraper)
+}
+
+/// Fetch tweet count and sentiment for a user
+async fn fetch_tweet_count(handle: &str, scraper: Option<&Scraper>) -> Result<(u32, u32, u32, u32)> {
+    let scraper = match scraper {
+        Some(s) => s,
+        None => return Ok((0, 0, 0, 0)), // No scraper = no tweets
+    };
+
+    // Get user profile
+    let profile = scraper.get_profile(handle).await
+        .context("Failed to get Twitter profile")?;
+
+    // Fetch recent tweets (up to 20)
+    let response = scraper.get_user_tweets(&profile.id, 20, None).await
+        .context("Failed to fetch tweets")?;
+
+    let tweets = response.tweets;
+    let total = tweets.len() as u32;
+
+    // Simple sentiment analysis
+    let mut positive = 0u32;
+    let mut negative = 0u32;
+    let mut neutral = 0u32;
+
+    for tweet in &tweets {
+        if let Some(text) = &tweet.text {
+            let sentiment = analyze_sentiment(text);
+            if sentiment > 0.0 {
+                positive += 1;
+            } else if sentiment < 0.0 {
+                negative += 1;
+            } else {
+                neutral += 1;
+            }
+        } else {
+            neutral += 1;
+        }
+    }
+
+    Ok((total, positive, negative, neutral))
+}
+
+/// Simple keyword-based sentiment analysis
+fn analyze_sentiment(text: &str) -> f64 {
+    let text_lower = text.to_lowercase();
+
+    let positive_words = [
+        "great", "excellent", "amazing", "good", "success", "win", "winning",
+        "growth", "profit", "record", "best", "excited", "love", "fantastic",
+        "incredible", "revolutionary", "breakthrough", "proud", "happy",
+        "bullish", "moon", "rocket", "innovation", "strong", "opportunity",
+    ];
+
+    let negative_words = [
+        "bad", "terrible", "awful", "poor", "loss", "losing", "fail", "failure",
+        "worst", "sad", "disappointed", "concern", "problem", "issue", "difficult",
+        "challenge", "unfortunate", "regret", "sorry", "bearish", "crash", "down",
+    ];
+
+    let mut score = 0.0;
+
+    for word in &positive_words {
+        if text_lower.contains(word) {
+            score += 1.0;
+        }
+    }
+
+    for word in &negative_words {
+        if text_lower.contains(word) {
+            score -= 1.0;
+        }
+    }
+
+    score
 }
