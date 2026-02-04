@@ -28,6 +28,7 @@
 **/credentials.json
 twitter_token.txt
 stock_api_key.txt
+setup-env.ps1
 
 # Output files
 *.pl
