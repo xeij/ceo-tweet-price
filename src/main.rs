@@ -37,7 +37,9 @@ async fn main() -> Result<()> {
     println!("Fetching tweets from @{}...", args.ceo_handle);
     let tweets = twitter::fetch_tweets(
         &args.ceo_handle,
-        &args.api_key_twitter,
+        args.api_key_twitter.as_deref(),
+        args.twitter_username.as_deref(),
+        args.twitter_password.as_deref(),
         args.days,
         args.verbose,
     )

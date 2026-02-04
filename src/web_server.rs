@@ -35,7 +35,9 @@ struct CeoConfig {
 #[derive(Clone)]
 struct AppState {
     results: Arc<RwLock<Vec<AnalysisResult>>>,
-    twitter_token: String,
+    twitter_token: Option<String>,
+    twitter_username: Option<String>,
+    twitter_password: Option<String>,
     stock_api_key: String,
 }
 
@@ -44,8 +46,15 @@ async fn main() -> anyhow::Result<()> {
     println!("Starting CEO Tweet Analyzer Web Server...\n");
 
     // Get API keys from environment
-    let twitter_token = std::env::var("TWITTER_BEARER_TOKEN")
-        .expect("TWITTER_BEARER_TOKEN environment variable not set");
+    let twitter_token = std::env::var("TWITTER_BEARER_TOKEN").ok();
+    let twitter_username = std::env::var("TWITTER_USERNAME").ok();
+    let twitter_password = std::env::var("TWITTER_PASSWORD").ok();
+    
+    if twitter_token.is_none() && (twitter_username.is_none() || twitter_password.is_none()) {
+        println!("WARNING: Neither TWITTER_BEARER_TOKEN nor TWITTER_USERNAME/PASSWORD are set.");
+        println!("         Fetching tweets might fail.");
+    }
+
     let stock_api_key = std::env::var("STOCK_API_KEY")
         .expect("STOCK_API_KEY environment variable not set");
 
@@ -63,6 +72,8 @@ async fn main() -> anyhow::Result<()> {
     let state = AppState {
         results: Arc::new(RwLock::new(cached_results)),
         twitter_token,
+        twitter_username,
+        twitter_password,
         stock_api_key,
     };
 
@@ -150,7 +161,9 @@ async fn run_analysis(State(state): State<AppState>) -> impl IntoResponse {
         // Fetch tweets
         let tweets = match twitter::fetch_tweets(
             &config.ceo_handle,
-            &state.twitter_token,
+            state.twitter_token.as_deref(),
+            state.twitter_username.as_deref(),
+            state.twitter_password.as_deref(),
             days,
             false,
         )

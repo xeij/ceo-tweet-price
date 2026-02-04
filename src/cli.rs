@@ -87,8 +87,8 @@ impl Cli {
             anyhow::bail!("Days must be between 1 and 3650 (10 years)");
         }
         
-        if self.api_key_twitter.is_empty() {
-            anyhow::bail!("Twitter API key is required (use --api-key-twitter or TWITTER_BEARER_TOKEN env var)");
+        if self.api_key_twitter.is_none() && (self.twitter_username.is_none() || self.twitter_password.is_none()) {
+            anyhow::bail!("Either Twitter API key (TWITTER_BEARER_TOKEN) OR Twitter credentials (TWITTER_USERNAME, TWITTER_PASSWORD) are required");
         }
         
         if self.api_key_stocks.is_empty() {
@@ -109,7 +109,9 @@ mod tests {
             ceo_handle: String::new(),
             ticker: "TSLA".to_string(),
             days: 365,
-            api_key_twitter: "test".to_string(),
+            api_key_twitter: Some("test".to_string()),
+            twitter_username: None,
+            twitter_password: None,
             api_key_stocks: "test".to_string(),
             output_format: OutputFormat::Table,
             verbose: false,
@@ -126,7 +128,28 @@ mod tests {
             ceo_handle: "elonmusk".to_string(),
             ticker: "TSLA".to_string(),
             days: 365,
-            api_key_twitter: "test_token".to_string(),
+            api_key_twitter: Some("test_token".to_string()),
+            twitter_username: None,
+            twitter_password: None,
+            api_key_stocks: "test_key".to_string(),
+            output_format: OutputFormat::Table,
+            verbose: false,
+            export_prolog: None,
+            chart_output: None,
+        };
+        
+        assert!(cli.validate().is_ok());
+    }
+
+    #[test]
+    fn test_cli_validation_scraping_creds() {
+        let cli = Cli {
+            ceo_handle: "elonmusk".to_string(),
+            ticker: "TSLA".to_string(),
+            days: 365,
+            api_key_twitter: None,
+            twitter_username: Some("user".to_string()),
+            twitter_password: Some("pass".to_string()),
             api_key_stocks: "test_key".to_string(),
             output_format: OutputFormat::Table,
             verbose: false,
