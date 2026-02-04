@@ -235,7 +235,7 @@
 
         <div id="emptyState" class="empty-state">
             <h2>No Data Yet</h2>
-            <p>Click "Run Analysis" to analyze 50 CEO/stock pairs</p>
+            <p>Click "Run Analysis" to analyze 25 CEO/stock pairs</p>
         </div>
 
         <footer>
@@ -258,7 +258,7 @@
             btn.textContent = 'Analyzing...';
             status.style.display = 'block';
             status.className = 'status loading';
-            statusText.innerHTML = '<span class="loading-spinner"></span> Running analysis on 50 companies... This may take several minutes.';
+            statusText.innerHTML = '<span class="loading-spinner"></span> Running analysis on 25 companies... This may take several minutes.';
 
             try {
                 const response = await fetch('/api/analyze', {

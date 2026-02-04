@@ -125,12 +125,12 @@ async fn run_analysis(State(state): State<AppState>) -> impl IntoResponse {
     println!("Loaded {} CEO/ticker pairs", configs.len());
 
     let mut results = Vec::new();
-    let days = 90; // Analyze last 90 days
+    let days = 90; // this will be used for price history, but tweet count is strictly limited in twitter.rs
 
-    // Process each CEO (limit to first 50)
-    for (idx, config) in configs.iter().take(50).enumerate() {
+    // Process each CEO (limit to first 25)
+    for (idx, config) in configs.iter().take(25).enumerate() {
         println!(
-            "  [{}/50] Analyzing @{} / {}...",
+            "  [{}/25] Analyzing @{} / {}...",
             idx + 1,
             config.ceo_handle,
             config.ticker
@@ -148,6 +148,7 @@ async fn run_analysis(State(state): State<AppState>) -> impl IntoResponse {
             Ok(t) => t,
             Err(e) => {
                 eprintln!("    WARNING: Failed to fetch tweets: {}", e);
+                // Continue to next CEO on error
                 continue;
             }
         };
