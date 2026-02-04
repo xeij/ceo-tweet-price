@@ -1,0 +1,60 @@
+name: Daily Analysis
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  analyze_and_commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push changes
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Run Analysis
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          STOCK_API_KEY: ${{ secrets.STOCK_API_KEY }}
+        run: cargo run --bin run_batch
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code data/results.json || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push Results
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add data/results.json
+          git commit -m "Update analysis results [skip ci]"
+          git push

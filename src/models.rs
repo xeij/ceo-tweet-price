@@ -112,6 +112,27 @@ pub struct AnalysisResult {
     
     /// Percentage of positive tweets followed by >3% rise (3 days)
     pub positive_tweets_with_rise_3d: f64,
+
+    /// Stock performance over last 1 week
+    pub performance_1w: Option<f64>,
+
+    /// Stock performance over last 1 month
+    pub performance_1m: Option<f64>,
+    
+    /// Stock performance over last 3 months
+    pub performance_3m: Option<f64>,
+
+    /// Count of positive tweets
+    #[serde(default)]
+    pub positive_tweets: usize,
+
+    /// Count of negative tweets  
+    #[serde(default)]
+    pub negative_tweets: usize,
+
+    /// Count of neutral tweets
+    #[serde(default)]
+    pub neutral_tweets: usize,
     
     /// Total number of tweets analyzed
     pub total_tweets: usize,
@@ -133,6 +154,12 @@ impl AnalysisResult {
             correlation_3d: None,
             positive_tweets_with_rise_1d: 0.0,
             positive_tweets_with_rise_3d: 0.0,
+            performance_1w: None,
+            performance_1m: None,
+            performance_3m: None,
+            positive_tweets: 0,
+            negative_tweets: 0,
+            neutral_tweets: 0,
             total_tweets: 0,
             tweets_with_price_data: 0,
         }

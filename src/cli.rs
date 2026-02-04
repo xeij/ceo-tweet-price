@@ -28,9 +28,17 @@ pub struct Cli {
     #[arg(long, default_value = "365", value_name = "DAYS")]
     pub days: u32,
 
-    /// Twitter API Bearer Token (or set via TWITTER_BEARER_TOKEN env var)
+    /// Twitter API Bearer Token (optional if using scraping)
     #[arg(long, env = "TWITTER_BEARER_TOKEN", value_name = "TOKEN")]
-    pub api_key_twitter: String,
+    pub api_key_twitter: Option<String>,
+
+    /// Twitter Username (for scraping)
+    #[arg(long, env = "TWITTER_USERNAME")]
+    pub twitter_username: Option<String>,
+
+    /// Twitter Password (for scraping)
+    #[arg(long, env = "TWITTER_PASSWORD")]
+    pub twitter_password: Option<String>,
 
     /// Stock API key (Alpha Vantage) (or set via STOCK_API_KEY env var)
     #[arg(long, env = "STOCK_API_KEY", value_name = "KEY")]

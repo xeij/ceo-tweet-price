@@ -1,0 +1,127 @@
+[
+    {
+        "ceo_handle": "elonmusk",
+        "ticker": "TSLA",
+        "company": "Tesla"
+    },
+    {
+        "ceo_handle": "tim_cook",
+        "ticker": "AAPL",
+        "company": "Apple"
+    },
+    {
+        "ceo_handle": "satyanadella",
+        "ticker": "MSFT",
+        "company": "Microsoft"
+    },
+    {
+        "ceo_handle": "sundarpichai",
+        "ticker": "GOOGL",
+        "company": "Google"
+    },
+    {
+        "ceo_handle": "jeffbezos",
+        "ticker": "AMZN",
+        "company": "Amazon"
+    },
+    {
+        "ceo_handle": "zuck",
+        "ticker": "META",
+        "company": "Meta"
+    },
+    {
+        "ceo_handle": "jenhsunhuang",
+        "ticker": "NVDA",
+        "company": "NVIDIA"
+    },
+    {
+        "ceo_handle": "BrianChesky",
+        "ticker": "ABNB",
+        "company": "Airbnb"
+    },
+    {
+        "ceo_handle": "tobi",
+        "ticker": "SHOP",
+        "company": "Shopify"
+    },
+    {
+        "ceo_handle": "jack",
+        "ticker": "SQ",
+        "company": "Block"
+    },
+    {
+        "ceo_handle": "brian_armstrong",
+        "ticker": "COIN",
+        "company": "Coinbase"
+    },
+    {
+        "ceo_handle": "daniel_ek",
+        "ticker": "SPOT",
+        "company": "Spotify"
+    },
+    {
+        "ceo_handle": "dkhos",
+        "ticker": "UBER",
+        "company": "Uber"
+    },
+    {
+        "ceo_handle": "reedhaslam",
+        "ticker": "NFLX",
+        "company": "Netflix"
+    },
+    {
+        "ceo_handle": "mcuban",
+        "ticker": "COST",
+        "company": "Costco"
+    },
+    {
+        "ceo_handle": "richardbranson",
+        "ticker": "SPCE",
+        "company": "Virgin Galactic"
+    },
+    {
+        "ceo_handle": "WarrenBuffett",
+        "ticker": "BRK.B",
+        "company": "Berkshire Hathaway"
+    },
+    {
+        "ceo_handle": "lisasu",
+        "ticker": "AMD",
+        "company": "AMD"
+    },
+    {
+        "ceo_handle": "chamath",
+        "ticker": "SOFI",
+        "company": "SoFi"
+    },
+    {
+        "ceo_handle": "michael_saylor",
+        "ticker": "MSTR",
+        "company": "MicroStrategy"
+    },
+    {
+        "ceo_handle": "cathiedwood",
+        "ticker": "ARKK",
+        "company": "ARK Invest"
+    },
+    {
+        "ceo_handle": "BillAckman",
+        "ticker": "PSH",
+        "company": "Pershing Square"
+    },
+    {
+        "ceo_handle": "Carl_C_Icahn",
+        "ticker": "IEP",
+        "company": "Icahn Enterprises"
+    },
+    {
+        "ceo_handle": "RayDalio",
+        "ticker": "SPY",
+        "company": "Bridgewater"
+    },
+    {
+        "ceo_handle": "jimcramer",
+        "ticker": "SPY",
+        "company": "CNBC/Market Commentary"
+    }
+]

@@ -6,6 +6,13 @@
 Write-Host "CEO Tweet Analyzer - Web Dashboard" -ForegroundColor Cyan
 Write-Host "======================================`n" -ForegroundColor Cyan
 
+# Automatically load keys from setup-env.ps1 if it exists
+if (Test-Path ".\setup-env.ps1") {
+    Write-Host "Loading API keys from setup-env.ps1..." -ForegroundColor Cyan
+    . .\setup-env.ps1
+}
+
+
 # Check if API keys are set
 if (-not $env:TWITTER_BEARER_TOKEN) {
     Write-Host "ERROR: TWITTER_BEARER_TOKEN not set" -ForegroundColor Red

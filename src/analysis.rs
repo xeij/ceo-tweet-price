@@ -59,8 +59,18 @@ pub fn analyze(
     
     // Step 5: Calculate positive tweet success rates
     let (pos_rise_1d, pos_rise_3d) = calculate_positive_tweet_stats(&impacts);
+
+    // Step 6: Calculate tweet counts
+    let positive_tweets = tweets.iter().filter(|t| t.sentiment.unwrap_or(0.0) > 0.0).count();
+    let negative_tweets = tweets.iter().filter(|t| t.sentiment.unwrap_or(0.0) < 0.0).count();
+    let neutral_tweets = tweets.iter().filter(|t| t.sentiment.unwrap_or(0.0) == 0.0).count();
     
-    // Step 6: Build result
+    // Step 7: Calculate stock performance
+    let performance_1w = calculate_period_performance(&prices, 7);
+    let performance_1m = calculate_period_performance(&prices, 30);
+    let performance_3m = calculate_period_performance(&prices, 90);
+    
+    // Step 8: Build result
     let start_date = tweets.iter().map(|t| t.created_at).min().unwrap_or(Utc::now());
     let end_date = tweets.iter().map(|t| t.created_at).max().unwrap_or(Utc::now());
     
@@ -76,10 +86,46 @@ pub fn analyze(
     result.correlation_3d = correlation_3d;
     result.positive_tweets_with_rise_1d = pos_rise_1d;
     result.positive_tweets_with_rise_3d = pos_rise_3d;
+    result.performance_1w = performance_1w;
+    result.performance_1m = performance_1m;
+    result.performance_3m = performance_3m;
+    result.positive_tweets = positive_tweets;
+    result.negative_tweets = negative_tweets;
+    result.neutral_tweets = neutral_tweets;
     result.total_tweets = tweets.len();
     result.tweets_with_price_data = tweets_with_data;
     
     Ok(result)
+}
+
+/// Calculate stock performance over a specific period of days
+fn calculate_period_performance(prices: &[PricePoint], days: i64) -> Option<f64> {
+    if prices.is_empty() {
+        return None;
+    }
+
+    // Find latest price (end of period)
+    let latest = prices.iter().max_by_key(|p| p.date)?;
+    
+    // Target date in the past
+    let target_date = latest.date - Duration::days(days);
+    
+    // Find closest price at or before target date
+    // We want the price roughly 'days' ago. If exact date missing, use closest previous.
+    let past_price = prices.iter()
+        .filter(|p| p.date <= target_date)
+        .max_by_key(|p| p.date);
+
+    match past_price {
+        Some(past) => {
+            if past.close == 0.0 {
+                None
+            } else {
+                Some(((latest.close - past.close) / past.close) * 100.0)
+            }
+        },
+        None => None // Not enough data history
+    }
 }
 
 /// Calculate sentiment score for tweet text using keyword-based approach

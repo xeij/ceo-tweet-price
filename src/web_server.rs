@@ -17,6 +17,7 @@ use tower_http::{cors::CorsLayer, services::ServeDir};
 mod analysis;
 mod models;
 mod prolog;
+mod storage;
 mod stocks;
 mod twitter;
 
@@ -48,9 +49,19 @@ async fn main() -> anyhow::Result<()> {
     let stock_api_key = std::env::var("STOCK_API_KEY")
         .expect("STOCK_API_KEY environment variable not set");
 
+    // Load existing results
+    let cached_results = storage::load_results().unwrap_or_else(|e| {
+        println!("No existing data found or failed to load: {}", e);
+        Vec::new()
+    });
+    
+    if !cached_results.is_empty() {
+        println!("Loaded {} existing analysis results from disk", cached_results.len());
+    }
+
     // Initialize app state
     let state = AppState {
-        results: Arc::new(RwLock::new(Vec::new())),
+        results: Arc::new(RwLock::new(cached_results)),
         twitter_token,
         stock_api_key,
     };
@@ -209,6 +220,13 @@ async fn run_analysis(State(state): State<AppState>) -> impl IntoResponse {
     // Store results
     let mut state_results = state.results.write().await;
     *state_results = results.clone();
+
+    // Save to disk
+    if let Err(e) = storage::save_results(&results) {
+        eprintln!("ERROR: Failed to save results to disk: {}", e);
+    } else {
+        println!("Saved analysis results to data/results.json");
+    }
 
     println!("\nBatch analysis complete! Analyzed {} companies\n", results.len());
 

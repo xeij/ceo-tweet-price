@@ -1,0 +1,3602 @@
+[
+  {
+    "ceo_handle": "elonmusk",
+    "ticker": "TSLA",
+    "start_date": "2026-02-01T20:47:03Z",
+    "end_date": "2026-02-04T07:59:23Z",
+    "impacts": [
+      {
+        "tweet": {
+          "id": "2018945864497270952",
+          "text": "Because it guarantees a failed state https://t.co/2YyqL0sQso",
+          "created_at": "2026-02-04T07:12:58Z",
+          "retweet_count": 6753,
+          "like_count": 40538,
+          "sentiment": -0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018732491125727232",
+          "text": "Tyrants love censorship https://t.co/BeYMrAeZKt",
+          "created_at": "2026-02-03T17:05:06Z",
+          "retweet_count": 25007,
+          "like_count": 97379,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018487871116566567",
+          "text": "Try https://t.co/op5s4ZikGJ! \n\nWe are striving to make this the best open source, no license or anything distillation of all knowledge. https://t.co/vLToa7QHH8",
+          "created_at": "2026-02-03T00:53:04Z",
+          "retweet_count": 9800,
+          "like_count": 50546,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018423695987888426",
+          "text": "Great point https://t.co/PwpvohQy4P",
+          "created_at": "2026-02-02T20:38:04Z",
+          "retweet_count": 18152,
+          "like_count": 112513,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018068911875346740",
+          "text": "Nobody has fought harder for full release of the Epstein files and prosecutions of those who abused children more than I did, knowing full well that the legacy media, far-left propagandists and those who are actually guilty would:\n\n1. Admit nothing\n2. Deny everything \n3. Make",
+          "created_at": "2026-02-01T21:08:17Z",
+          "retweet_count": 57895,
+          "like_count": 402446,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018957542228218314",
+          "text": "Needs to be above zero https://t.co/NzF2OKNwPn",
+          "created_at": "2026-02-04T07:59:23Z",
+          "retweet_count": 10470,
+          "like_count": 87807,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018948063948316963",
+          "text": "💯 https://t.co/GJqNBZ16d2",
+          "created_at": "2026-02-04T07:21:43Z",
+          "retweet_count": 4571,
+          "like_count": 26914,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018945061690679404",
+          "text": "Grok Imagine https://t.co/LHjA3dRZCn",
+          "created_at": "2026-02-04T07:09:47Z",
+          "retweet_count": 300,
+          "like_count": 1431,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018928205873455387",
+          "text": "😂 https://t.co/j8ZNh7tg8k",
+          "created_at": "2026-02-04T06:02:48Z",
+          "retweet_count": 9188,
+          "like_count": 87674,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018871092686008736",
+          "text": "Starlink now available in Senegal https://t.co/rZXdx2nwry",
+          "created_at": "2026-02-04T02:15:51Z",
+          "retweet_count": 4812,
+          "like_count": 58198,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018791521018061261",
+          "text": "https://t.co/Ui0vr66BL1 https://t.co/LWs5iEjpCJ",
+          "created_at": "2026-02-03T20:59:40Z",
+          "retweet_count": 3484,
+          "like_count": 21287,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018785481308438907",
+          "text": "This is a political attack https://t.co/Z204wJuQIr",
+          "created_at": "2026-02-03T20:35:40Z",
+          "retweet_count": 16868,
+          "like_count": 102812,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018784828129243614",
+          "text": "Building an interstellar civilization\nhttps://t.co/jccDcLG7e7",
+          "created_at": "2026-02-03T20:33:04Z",
+          "retweet_count": 3435,
+          "like_count": 26626,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018783811107196992",
+          "text": "This is what authorities in France should be focused on https://t.co/h8os2PYZXb",
+          "created_at": "2026-02-03T20:29:02Z",
+          "retweet_count": 37496,
+          "like_count": 197089,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018782057103868145",
+          "text": "Wow https://t.co/LyPozogHLI",
+          "created_at": "2026-02-03T20:22:04Z",
+          "retweet_count": 13050,
+          "like_count": 50473,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018779093488062663",
+          "text": "Wow https://t.co/hnvFRr6y2q",
+          "created_at": "2026-02-03T20:10:17Z",
+          "retweet_count": 16200,
+          "like_count": 86660,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018773911907811678",
+          "text": "Sánchez is the true fascist totalitarian https://t.co/b2U17fEwa7",
+          "created_at": "2026-02-03T19:49:42Z",
+          "retweet_count": 32396,
+          "like_count": 155528,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018769945811956005",
+          "text": "This will be super cool! https://t.co/CbmAln38c6",
+          "created_at": "2026-02-03T19:33:56Z",
+          "retweet_count": 2052,
+          "like_count": 15870,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018763369298235423",
+          "text": "Wow https://t.co/GSzfirkhZJ",
+          "created_at": "2026-02-03T19:07:48Z",
+          "retweet_count": 4974,
+          "like_count": 27640,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018755707370410278",
+          "text": "❤️ https://t.co/1tXzIIr5Di",
+          "created_at": "2026-02-03T18:37:21Z",
+          "retweet_count": 18182,
+          "like_count": 127277,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018750985301323887",
+          "text": "💯 https://t.co/BgPgFlAxUy",
+          "created_at": "2026-02-03T18:18:36Z",
+          "retweet_count": 22598,
+          "like_count": 92592,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018746867056513207",
+          "text": "Dirty Sánchez is a tyrant and traitor to the people of Spain 💩 https://t.co/B3oyHrBYpR",
+          "created_at": "2026-02-03T18:02:14Z",
+          "retweet_count": 46039,
+          "like_count": 253262,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018737411828920678",
+          "text": "https://t.co/XjEZkVSxAq",
+          "created_at": "2026-02-03T17:24:39Z",
+          "retweet_count": 19679,
+          "like_count": 72143,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018737334586630522",
+          "text": "EU Censorship files https://t.co/LX5Psr1RQT",
+          "created_at": "2026-02-03T17:24:21Z",
+          "retweet_count": 13633,
+          "like_count": 60234,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018726518126530854",
+          "text": "This is crucial to save democracy in America https://t.co/KAs6bVf3iy",
+          "created_at": "2026-02-03T16:41:22Z",
+          "retweet_count": 17745,
+          "like_count": 118006,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018726177096036477",
+          "text": "Massive scam https://t.co/D2bgxoeTqz",
+          "created_at": "2026-02-03T16:40:01Z",
+          "retweet_count": 22747,
+          "like_count": 96410,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018725400591949923",
+          "text": "Boring Company to build Dubai Loop! https://t.co/qMSc0Rhqsb",
+          "created_at": "2026-02-03T16:36:56Z",
+          "retweet_count": 5398,
+          "like_count": 48946,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018581923212439973",
+          "text": "Anything less than K2 is feeble https://t.co/wZjg0NfzZE",
+          "created_at": "2026-02-03T07:06:48Z",
+          "retweet_count": 4885,
+          "like_count": 37100,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018579799719977169",
+          "text": "True https://t.co/8PKIPFyiNQ",
+          "created_at": "2026-02-03T06:58:22Z",
+          "retweet_count": 3491,
+          "like_count": 36535,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018578316039713220",
+          "text": "The older seasons of Star Trek were a positive view of the future https://t.co/tlMsutPGKn",
+          "created_at": "2026-02-03T06:52:28Z",
+          "retweet_count": 6189,
+          "like_count": 76746,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018525069182648658",
+          "text": "Download the latest @Grok app https://t.co/a7EJS1hxln",
+          "created_at": "2026-02-03T03:20:53Z",
+          "retweet_count": 2224,
+          "like_count": 11516,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018509516179194317",
+          "text": "Some days be like https://t.co/jg62poqcWs",
+          "created_at": "2026-02-03T02:19:05Z",
+          "retweet_count": 16297,
+          "like_count": 358331,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018496451723018538",
+          "text": "And then the galaxy https://t.co/Bwut0K7zh0",
+          "created_at": "2026-02-03T01:27:10Z",
+          "retweet_count": 9152,
+          "like_count": 61883,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018483704398786796",
+          "text": "K2 or you’re not even trying! https://t.co/rj3oXp9RdD",
+          "created_at": "2026-02-03T00:36:31Z",
+          "retweet_count": 5755,
+          "like_count": 48583,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018483071046054074",
+          "text": "To the stars!\n\n@SpaceX &amp; @xAI are now one company https://t.co/2SPVVhZQsp",
+          "created_at": "2026-02-03T00:34:00Z",
+          "retweet_count": 7412,
+          "like_count": 66284,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.96,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018427678211326313",
+          "text": "Traveling to the stars is inspiring https://t.co/6wx6hj4mdi",
+          "created_at": "2026-02-02T20:53:53Z",
+          "retweet_count": 7119,
+          "like_count": 43524,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018403790982946965",
+          "text": "💯 https://t.co/vC6hDyGZO3",
+          "created_at": "2026-02-02T19:18:58Z",
+          "retweet_count": 42993,
+          "like_count": 412842,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018403658480669035",
+          "text": "Starship V3 rocket booster https://t.co/7zHGxAmEWX",
+          "created_at": "2026-02-02T19:18:26Z",
+          "retweet_count": 6213,
+          "like_count": 55038,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018403303952990480",
+          "text": "Short film made with @Grok Imagine https://t.co/MTXuI32cZ2",
+          "created_at": "2026-02-02T19:17:02Z",
+          "retweet_count": 3301,
+          "like_count": 22501,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018218274098684011",
+          "text": "Try https://t.co/Ui0vr66BL1 https://t.co/RKUxo0MW4t",
+          "created_at": "2026-02-02T07:01:47Z",
+          "retweet_count": 4534,
+          "like_count": 25673,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018215085848879561",
+          "text": "Grok Imagine is generating more videos than all others combined https://t.co/xtHkTJnri2",
+          "created_at": "2026-02-02T06:49:07Z",
+          "retweet_count": 3389,
+          "like_count": 20015,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018214811260350716",
+          "text": "Starbase has come a long way https://t.co/9mfGdNqQ8E",
+          "created_at": "2026-02-02T06:48:02Z",
+          "retweet_count": 12350,
+          "like_count": 138320,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018210735441010716",
+          "text": "Wow, it’s so crazy the Epstein “killed himself” before realizing he was “innocent” 🙄\n\nAnd Ghislaine Maxwell is in prison for what exactly? Oh yeah. \n\nEpstein client arrest counter is still zero. https://t.co/7XFADAQcfR",
+          "created_at": "2026-02-02T06:31:50Z",
+          "retweet_count": 41394,
+          "like_count": 311811,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018201291034689798",
+          "text": "🇺🇸🇺🇸 https://t.co/Tc2gbFrjuw",
+          "created_at": "2026-02-02T05:54:18Z",
+          "retweet_count": 31181,
+          "like_count": 239968,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018182141654245723",
+          "text": "Reid bringing “gifts” to Epstein https://t.co/45IvaUeEgF",
+          "created_at": "2026-02-02T04:38:13Z",
+          "retweet_count": 2084,
+          "like_count": 11602,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018172495535247571",
+          "text": "Truly insane levels of fraud!\n\n18% of home healthcare billing nationwide is coming from one county in California … https://t.co/D7bez2Esan",
+          "created_at": "2026-02-02T03:59:53Z",
+          "retweet_count": 50799,
+          "like_count": 191077,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018171445919015007",
+          "text": "Grok Imagine version 1.0 is now in wide release https://t.co/8fkL4507gj",
+          "created_at": "2026-02-02T03:55:43Z",
+          "retweet_count": 2653,
+          "like_count": 16797,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 421.81,
+        "change_1d": 0.03556103458902759,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018079455873212529",
+          "text": "We are in the beginning of the Singularity https://t.co/Jt4IgNcBJ4",
+          "created_at": "2026-02-01T21:50:11Z",
+          "retweet_count": 11178,
+          "like_count": 93757,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018071350833746276",
+          "text": "Because they are guilty https://t.co/p1QVuIqUqa",
+          "created_at": "2026-02-01T21:17:58Z",
+          "retweet_count": 24306,
+          "like_count": 223455,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018063567933599793",
+          "text": "This is how I knew so long ago that Reid Hoffman went to Epstein’s island. \n\nEpstein used Reid being there to try to get me to go, not realizing that it would have the opposite effect 😂 https://t.co/zrOIq4gWaR",
+          "created_at": "2026-02-01T20:47:03Z",
+          "retweet_count": 38573,
+          "like_count": 254084,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      }
+    ],
+    "correlation_1d": null,
+    "correlation_3d": null,
+    "positive_tweets_with_rise_1d": 0.0,
+    "positive_tweets_with_rise_3d": 0.0,
+    "performance_1w": -2.0747273149222556,
+    "performance_1m": -3.6774944643550147,
+    "performance_3m": -8.680502954097866,
+    "positive_tweets": 4,
+    "negative_tweets": 1,
+    "neutral_tweets": 45,
+    "total_tweets": 50,
+    "tweets_with_price_data": 40
+  },
+  {
+    "ceo_handle": "tim_cook",
+    "ticker": "AAPL",
+    "start_date": "2025-07-26T06:21:13Z",
+    "end_date": "2026-01-19T14:29:04Z",
+    "impacts": [
+      {
+        "tweet": {
+          "id": "2013257406634168564",
+          "text": "Today we honor Dr. Martin Luther King Jr.’s legacy of service, his commitment to justice, and his belief that every one of us has the power to make a difference, because as he reminded us, “everybody can be great, because everybody can serve.” https://t.co/DzF70FIGg9",
+          "created_at": "2026-01-19T14:29:04Z",
+          "retweet_count": 1525,
+          "like_count": 9020,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2006727109322944893",
+          "text": "As the new year begins, sending wishes of good health and happiness to everyone around the world!",
+          "created_at": "2026-01-01T14:00:00Z",
+          "retweet_count": 1165,
+          "like_count": 13140,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2004205492630180123",
+          "text": "Wishing you and your loved ones a very merry Christmas!",
+          "created_at": "2025-12-25T15:00:00Z",
+          "retweet_count": 1785,
+          "like_count": 26802,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996587041921101844",
+          "text": "Every year, developers bring their ideas to life in ways that push what’s possible. These winners showed exceptional innovation, user experience, and design—from accessible game design to supercharging creativity. https://t.co/4dAEBy65wy",
+          "created_at": "2025-12-04T14:27:00Z",
+          "retweet_count": 579,
+          "like_count": 6593,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 280.7,
+        "change_1d": -0.6840042750267246,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996232962061238725",
+          "text": "For 40 years, Apple has been accessible by design. Because we believe the best technology works for everyone, on #IDPD and every day.",
+          "created_at": "2025-12-03T15:00:01Z",
+          "retweet_count": 502,
+          "like_count": 7296,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 284.15,
+        "change_1d": -1.2141474573288715,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1994058632040993021",
+          "text": "From our Apple family to yours, wishing everyone a happy Thanksgiving",
+          "created_at": "2025-11-27T15:00:00Z",
+          "retweet_count": 1200,
+          "like_count": 21527,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1980375071475790105",
+          "text": "It all begins with a great idea. https://t.co/s72Qnff12H",
+          "created_at": "2025-10-20T20:46:25Z",
+          "retweet_count": 2481,
+          "like_count": 28452,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 262.24,
+        "change_1d": 0.20210494203781754,
+        "change_3d": -1.014338010982316,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1978464629400506382",
+          "text": "Amazing performance. Extraordinary battery life. Introducing the all-new 14-inch MacBook Pro with M5, delivering the next big leap in AI performance on the Mac. https://t.co/qqjyO2Sj3W",
+          "created_at": "2025-10-15T14:15:00Z",
+          "retweet_count": 1925,
+          "like_count": 20419,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 249.34,
+        "change_1d": -0.7580011229646325,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1976286023283036314",
+          "text": "We're proud to help small and medium businesses at Detroit’s Apple Manufacturing Academy as they embrace new manufacturing techniques to create new opportunities for their teams, their communities, and our country. https://t.co/3DGOBFGcyq",
+          "created_at": "2025-10-09T13:58:00Z",
+          "retweet_count": 512,
+          "like_count": 5368,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 254.04,
+        "change_1d": -3.452212250039357,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1974898882955170093",
+          "text": "Happy World Teachers' Day! Today we celebrate the dedication of educators all around the world. https://t.co/uNJKJ9rJmC",
+          "created_at": "2025-10-05T18:06:00Z",
+          "retweet_count": 535,
+          "like_count": 4442,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1973478920428364123",
+          "text": "Jane Goodall was a groundbreaking scientist and leader who taught us all so much about the beauty and wonder of our world. She never stopped advocating for nature, people, and the planet we share. May she rest in peace. https://t.co/CLxq9i3xWX",
+          "created_at": "2025-10-01T20:03:34Z",
+          "retweet_count": 785,
+          "like_count": 9218,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 255.45,
+        "change_1d": 0.6576629477392864,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1971095177218674889",
+          "text": "Thanks to @akiyaspin for showing me the Hie Shrine in Tokyo. It was an honor to visit and learn about its enduring legacy. https://t.co/4koNFtdbD7",
+          "created_at": "2025-09-25T06:11:26Z",
+          "retweet_count": 602,
+          "like_count": 9306,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 256.87,
+        "change_1d": -0.54891579398139,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1970812392134377778",
+          "text": "Met Pikachu, connected with developers using our software features in amazing ways, and played Dragon Ball Gekishin Squadra at Bandai Namco… Japan is a gamer's paradise! https://t.co/WIilg7NWrM",
+          "created_at": "2025-09-24T11:27:44Z",
+          "retweet_count": 2587,
+          "like_count": 23357,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1969257715235975451",
+          "text": "We’re investing in communities across the US, including the revitalization of Downtown Detroit. Absolutely electric opening in the Motor City this evening as we celebrate our newest store and incredible product launch! https://t.co/hdVTsSOFTp",
+          "created_at": "2025-09-20T04:30:01Z",
+          "retweet_count": 504,
+          "like_count": 6068,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1969084035658838076",
+          "text": "iPhone 17, iPhone Air, iPhone 17 Pro, iPhone 17 Pro Max, our new Apple Watch lineup, and AirPods Pro 3… what a day!\n\nSo thankful to be with our incredible teams and customers celebrating at Apple Fifth Avenue! https://t.co/oECgNPFD5p",
+          "created_at": "2025-09-19T16:59:52Z",
+          "retweet_count": 816,
+          "like_count": 8018,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1967498065432182869",
+          "text": "Congratulations to The Studio, Severance, Slow Horses, and all of the @AppleTV Emmy nominees and winners! Tonight was a testament to their extraordinary storytelling and creativity. https://t.co/4bRXSp7kR3",
+          "created_at": "2025-09-15T07:57:47Z",
+          "retweet_count": 769,
+          "like_count": 13181,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1966554152663916665",
+          "text": "It's iPhone pre-order day and what better place to spend it than at Corning in Harrodsburg, KY! Soon all cover glass for iPhone and Apple Watch globally will be made here. We're proud to be an engine for American innovation. https://t.co/KK9e0Cc5Dh",
+          "created_at": "2025-09-12T17:27:01Z",
+          "retweet_count": 861,
+          "like_count": 10314,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1966544446386008300",
+          "text": "Stopped by Apple Fritz Farm in Lexington, Kentucky to spend time with our customers and retail team members as they get ready for a big week ahead! Thanks for a fantastic visit! https://t.co/wlHkkdNYzy",
+          "created_at": "2025-09-12T16:48:27Z",
+          "retweet_count": 419,
+          "like_count": 7055,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1963628857925472393",
+          "text": "Say hello to Apple Hebbal in Bengaluru and Apple Koregaon Park in Pune! We are thrilled to continue to bring the best of Apple to customers across India at these two new stores. https://t.co/IrTiIA9hY1",
+          "created_at": "2025-09-04T15:42:56Z",
+          "retweet_count": 2945,
+          "like_count": 44202,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1958165315491434990",
+          "text": "The Apple Manufacturing Academy is now open in Detroit! We welcomed the first participants from industries like packaging, eyewear &amp; 3D printing. We're excited to help even more businesses with advanced manufacturing to unlock opportunities for their companies and our country. https://t.co/WSqVgskQnv",
+          "created_at": "2025-08-20T13:52:46Z",
+          "retweet_count": 462,
+          "like_count": 4277,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1957804750210232544",
+          "text": "The colors in this #ShotOniPhone photo taken by Nay Jimenez are so vibrant! We're grateful for all the photographers who share their view of the world through the lens of iPhone. Happy #WorldPhotographyDay! https://t.co/eUCO1zaRLO",
+          "created_at": "2025-08-19T14:00:01Z",
+          "retweet_count": 453,
+          "like_count": 5351,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1948991981335838989",
+          "text": "こんにちは, Apple Umeda! We’re excited to welcome customers to this beautiful new store in the heart of Osaka. https://t.co/ax8NB6zr6C",
+          "created_at": "2025-07-26T06:21:13Z",
+          "retweet_count": 1303,
+          "like_count": 9672,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2003873311504130173",
+          "text": "Merry Christmas Eve, Carol. Be sure to leave some milk out for Santa. https://t.co/KrnX6Nz81k",
+          "created_at": "2025-12-24T17:00:02Z",
+          "retweet_count": 1143,
+          "like_count": 18024,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 273.81,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2000319888632799438",
+          "text": "This Hanukah, let us remember that a little light pushes away the darkness.",
+          "created_at": "2025-12-14T21:40:00Z",
+          "retweet_count": 1052,
+          "like_count": 15487,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999120612451877100",
+          "text": "More than 100 US companies have already attended sessions at the Apple Manufacturing Academy in Detroit.\n\nNow we’re launching virtual programming so even more US businesses and workers can learn advanced manufacturing expertise! https://t.co/lw8uDlodXo",
+          "created_at": "2025-12-11T14:14:30Z",
+          "retweet_count": 306,
+          "like_count": 2662,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 278.03,
+        "change_1d": 0.08991835413444593,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1997320135657607417",
+          "text": "Battersea Power Station is merry and bright with Christmas trees designed on iPad this holiday season! Thanks to Munya Chawawa and our collaborators for sharing their creativity—every submission brought joy to all of us at Apple! https://t.co/YPsWqlhMmZ",
+          "created_at": "2025-12-06T15:00:03Z",
+          "retweet_count": 1509,
+          "like_count": 13980,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1995900164519985451",
+          "text": "Storms across Thailand, Indonesia, Malaysia, and Sri Lanka have devastated communities. At Apple, we’re thinking of everyone affected, and will be donating to relief and building efforts on the ground.",
+          "created_at": "2025-12-02T16:57:35Z",
+          "retweet_count": 1852,
+          "like_count": 14234,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 286.19,
+        "change_1d": -0.7128131660784864,
+        "change_3d": -2.5891890003144855,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1994319685089702129",
+          "text": "Heartbroken by the devastating fire in Hong Kong. Everyone affected is in our thoughts and we are thankful for the first responders. Apple is donating to relief efforts on the ground.",
+          "created_at": "2025-11-28T08:17:20Z",
+          "retweet_count": 1143,
+          "like_count": 14304,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 278.85,
+        "change_1d": null,
+        "change_3d": 1.5241169087322932,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1994095373762142684",
+          "text": "Holiday cheer, a little bit of magic, and a whole lot of heart, captured on iPhone 17 Pro by a few handmade puppet friends! https://t.co/o1IspQ8RRu",
+          "created_at": "2025-11-27T17:26:00Z",
+          "retweet_count": 850,
+          "like_count": 8525,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991610033130635320",
+          "text": "Thanks to Israel Fernández, Amaia, Yerai Cortés, and Dellafuente for helping us celebrate 40 years of Apple in Spain, merging creativity with technology through Spanish music! ¡Qué arte! https://t.co/jmbArqekvF",
+          "created_at": "2025-11-20T20:50:08Z",
+          "retweet_count": 503,
+          "like_count": 5535,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 266.25,
+        "change_1d": 1.9680751173708952,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1988260426988101774",
+          "text": "Thank you to all those who have bravely served our country. On Veterans Day and every day, we honor our veterans, active service members, and their families.",
+          "created_at": "2025-11-11T15:00:00Z",
+          "retweet_count": 429,
+          "like_count": 5218,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 275.25,
+        "change_1d": -0.6466848319709256,
+        "change_3d": -1.0317892824704724,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1984306113693827570",
+          "text": "Our hearts go out to all of those impacted by the destruction of Hurricane Melissa. Apple will be making a donation to help with relief efforts on the ground.",
+          "created_at": "2025-10-31T17:06:58Z",
+          "retweet_count": 464,
+          "like_count": 5928,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 270.37,
+        "change_1d": null,
+        "change_3d": -0.48821984687650005,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1981464918932279798",
+          "text": "Apple’s American-made advanced servers are now shipping from our new Houston facility to Apple data centers! \n\nThese servers will help power Private Cloud Compute and Apple Intelligence, as part of our $600 billion US commitment. https://t.co/maOd3lCGfK",
+          "created_at": "2025-10-23T20:57:05Z",
+          "retweet_count": 1363,
+          "like_count": 14360,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 259.58,
+        "change_1d": 1.2481701209646388,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1981018266710823267",
+          "text": "Our new iPad Pro, MacBook Pro, and Apple Vision Pro are more pro and more powerful than ever, and they’re available today! https://t.co/iymogEcWO0",
+          "created_at": "2025-10-22T15:22:14Z",
+          "retweet_count": 757,
+          "like_count": 11555,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 258.45,
+        "change_1d": 0.43722189978719117,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1980114249989918769",
+          "text": "Wishing a joyful and healthy Diwali to all celebrating around the world! Thanks to Apeksha Maker for sharing this stunning photo taken on iPhone 17 Pro Max. https://t.co/s4BarZip3m",
+          "created_at": "2025-10-20T03:30:00Z",
+          "retweet_count": 4818,
+          "like_count": 75797,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 262.24,
+        "change_1d": 0.20210494203781754,
+        "change_3d": -1.014338010982316,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1978450735890120931",
+          "text": "Meet the new iPad Pro. Furiously fast with M5, making it even more powerful for all of your creative ideas. https://t.co/EowZJ7hAt3",
+          "created_at": "2025-10-15T13:19:47Z",
+          "retweet_count": 1584,
+          "like_count": 14851,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 249.34,
+        "change_1d": -0.7580011229646325,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1974822379663589796",
+          "text": "Steve saw the future as a bright and boundless place, lit the path forward, and inspired us to follow. We miss you, my friend. https://t.co/0ZF2FLc7Ub",
+          "created_at": "2025-10-05T13:02:00Z",
+          "retweet_count": 5717,
+          "like_count": 58452,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1971697370632278273",
+          "text": "Created manga with students on iPad in Kyoto, visited the team at Apple Umeda, and tried takoyaki before taking in a Hanshin Tigers baseball game in Osaka!\n\nArigato gozaimasu for the hospitality, Japan! https://t.co/YL7XfB7BBV",
+          "created_at": "2025-09-26T22:04:20Z",
+          "retweet_count": 4092,
+          "like_count": 31139,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 255.46,
+        "change_1d": null,
+        "change_3d": -0.4031942378454557,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1971449573739745348",
+          "text": "A new chapter begins at Apple Ginza! \n\nThis location will always be special: It was our first store outside the US and a defining moment in how we connect with our customers around the world.\n\nWe are thrilled to reopen our doors today and welcome customers in Japan! https://t.co/oiaqM3fJGs",
+          "created_at": "2025-09-26T05:39:40Z",
+          "retweet_count": 1678,
+          "like_count": 15917,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 255.46,
+        "change_1d": null,
+        "change_3d": -0.4031942378454557,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1971175347832984032",
+          "text": "One of the most special things about Japan is our team. Thank you for the innovation, collaboration, and energy you bring to everything that you do!\n\nApple Japanの仲間たち、ありがとう！ https://t.co/gFh36FZZ1t",
+          "created_at": "2025-09-25T11:30:00Z",
+          "retweet_count": 782,
+          "like_count": 9162,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 256.87,
+        "change_1d": -0.54891579398139,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1970439589266628654",
+          "text": "There's nothing like the energy in Tokyo! So thrilled to be back and be joined by @number_i_offic for a sneak peek of the all-new Apple Ginza, opening this Friday, September 26. https://t.co/SSEcXbLP3m",
+          "created_at": "2025-09-23T10:46:21Z",
+          "retweet_count": 12225,
+          "like_count": 52488,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1970261836051439923",
+          "text": "To everyone celebrating Rosh Hashanah around the world, wishing you a year full of hope and happiness.",
+          "created_at": "2025-09-22T23:00:02Z",
+          "retweet_count": 289,
+          "like_count": 4319,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1968846961559150648",
+          "text": "Many thanks to Inez &amp; Vinoodh, Mickalene Thomas, and Trunk Xu for capturing some of the first photographs with iPhone 17 Pro Max. Tonight was such a beautiful display of #ShotOniPhone photography. https://t.co/X3GX9kaooQ",
+          "created_at": "2025-09-19T01:17:49Z",
+          "retweet_count": 324,
+          "like_count": 3673,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1968739077001207990",
+          "text": "Can’t wait for tomorrow! https://t.co/VT0Js4DVmU",
+          "created_at": "2025-09-18T18:09:08Z",
+          "retweet_count": 2114,
+          "like_count": 38297,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1965584428127916150",
+          "text": "Apple Watch helps millions better understand their health simply by wearing it.\n\nToday we introduced two powerful new features: one that will notify you if it detects signs of hypertension over time, and sleep score to give you more insight into the quality of your sleep. https://t.co/f1cvPYy46Y",
+          "created_at": "2025-09-10T01:13:41Z",
+          "retweet_count": 966,
+          "like_count": 11461,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1965486394136297616",
+          "text": "AirPods Pro 3, the new Apple Watch lineup, iPhone 17, iPhone 17 Pro, and the all-new iPhone Air—here’s everything we just announced! https://t.co/EDPNjpoUW8",
+          "created_at": "2025-09-09T18:44:07Z",
+          "retweet_count": 7438,
+          "like_count": 48460,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1965415647632134518",
+          "text": "Days like today are some of the most exciting moments at Apple. #AppleEvent https://t.co/NWdOtNQVYH",
+          "created_at": "2025-09-09T14:03:00Z",
+          "retweet_count": 4788,
+          "like_count": 61621,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1960374776372887890",
+          "text": "Get ready for an awe dropping #AppleEvent on Tuesday, September 9! https://t.co/uAcYp2RLMM",
+          "created_at": "2025-08-26T16:12:23Z",
+          "retweet_count": 12346,
+          "like_count": 118169,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1958304804054483120",
+          "text": "Life is about the memories we make. https://t.co/SVkiA8gGDu",
+          "created_at": "2025-08-20T23:07:03Z",
+          "retweet_count": 2177,
+          "like_count": 25600,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1953196912410345798",
+          "text": "Apple is expanding our US commitment to $600 billion over the next four years. And our new American Manufacturing Program will bring even more jobs and advanced manufacturing to the US. https://t.co/6KWkTGJN3O",
+          "created_at": "2025-08-06T20:50:07Z",
+          "retweet_count": 5428,
+          "like_count": 39844,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      }
+    ],
+    "correlation_1d": -0.41615884438693684,
+    "correlation_3d": -0.11975650619555663,
+    "positive_tweets_with_rise_1d": 0.0,
+    "positive_tweets_with_rise_3d": 0.0,
+    "performance_1w": 4.34041894141791,
+    "performance_1m": -0.5645548134755074,
+    "performance_3m": -0.24431776116086776,
+    "positive_tweets": 22,
+    "negative_tweets": 0,
+    "neutral_tweets": 28,
+    "total_tweets": 50,
+    "tweets_with_price_data": 21
+  },
+  {
+    "ceo_handle": "satyanadella",
+    "ticker": "MSFT",
+    "start_date": "2025-10-24T18:00:35Z",
+    "end_date": "2026-01-29T00:34:32Z",
+    "impacts": [
+      {
+        "tweet": {
+          "id": "1998643116975546493",
+          "text": "Every time I visit India, I'm struck by how AI is already starting to have a profound impact on people's lives.\n\nA great example is our partnership with the @LabourMinistry to help connect more than 300 million informal workers to better jobs and social security, showing what’s",
+          "created_at": "2025-12-10T06:37:06Z",
+          "retweet_count": 854,
+          "like_count": 6389,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": 478.56,
+        "change_1d": 1.0259946506185276,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983670346164400160",
+          "text": "4/ And this week, we signed a new agreement with OpenAI, a milestone for both companies.\n\nIt’s been an incredible investment, with nearly 10X return and no carry. All the value goes straight to shareholders.\n\nAnother thing I feel super proud about is that Microsoft is now behind",
+          "created_at": "2025-10-29T23:00:39Z",
+          "retweet_count": 15,
+          "like_count": 204,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016671264514134137",
+          "text": "4/ Bottomline: Our TAM will grow substantially across every layer of the tech stack as this diffusion accelerates and spreads, and we feel very good about how we’re delivering for our customers today and innovating to capture the opportunity ahead.\n\nYou can read more about our",
+          "created_at": "2026-01-29T00:34:32Z",
+          "retweet_count": 14,
+          "like_count": 203,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 433.5,
+        "change_1d": -0.7404844290657392,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016671260382769626",
+          "text": "1/ Cloud &amp; Token Factory: The key metric we are optimizing for is tokens per watt and per dollar, which is all about increasing utilization and decreasing TCO using silicon, systems, and software.\n\nA good example is the 50% increase in throughput we were able to achieve in one of",
+          "created_at": "2026-01-29T00:34:31Z",
+          "retweet_count": 16,
+          "like_count": 283,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 433.5,
+        "change_1d": -0.7404844290657392,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011069589141279228",
+          "text": "As we continue to expand our AI infrastructure, we’re committed to being a good neighbor in the communities where we build and operate our datacenters.\n\nToday we’re sharing new steps we’ll take to partner with local communities across the U.S. https://t.co/xuAjAay3ou",
+          "created_at": "2026-01-13T13:35:28Z",
+          "retweet_count": 78,
+          "like_count": 592,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 470.67,
+        "change_1d": -2.3987082244460067,
+        "change_3d": -2.2967259438672536,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999388548097810772",
+          "text": "Great meeting Chief Minister @Dev_Fadnavis today to discuss how AI can have real impact for people across Maharashtra. Our first collaboration, MahaCrimeOS AI, is helping to support victims of cybercrime and financial fraud. https://t.co/XyB0Ec2xw6",
+          "created_at": "2025-12-12T07:59:11Z",
+          "retweet_count": 505,
+          "like_count": 3919,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 478.53,
+        "change_1d": null,
+        "change_3d": -0.7752909953398909,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999183534053879967",
+          "text": "2/ In GitHub Copilot, GPT-5.2 is a fantastic multi-purpose model, especially when it comes to long-context and reasoning when coding or investigating a complex code base. Also available today. https://t.co/VMnJP1TXdp",
+          "created_at": "2025-12-11T18:24:32Z",
+          "retweet_count": 38,
+          "like_count": 374,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999183482048905583",
+          "text": "1/ GPT-5.2 with Work IQ is great for unlocking insights, market research, and strategic planning—reasoning across your meetings, emails, and docs. Starting today, you can select GPT-5.2 in the model picker in M365 Copilot. https://t.co/GKIyQNBaWR",
+          "created_at": "2025-12-11T18:24:19Z",
+          "retweet_count": 20,
+          "like_count": 173,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999183430140198938",
+          "text": "Super excited about GPT-5.2 from our partners at OpenAI. Making it natively part of the Microsoft tools people use every day along with your work data helps all the new model capabilities shine.\n\nThe pace of progress continues to accelerate. GPT‑5.2 brings together GPT-5.2",
+          "created_at": "2025-12-11T18:24:07Z",
+          "retweet_count": 371,
+          "like_count": 4771,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1998987907131125935",
+          "text": "It was fun to spend time with the @Swiggy team today, and see how they're using Microsoft Fabric to process billions of data points in near real time, paving the way for innovations in delivery to their millions of users. A really great use case! https://t.co/h7GxFTJiRy",
+          "created_at": "2025-12-11T05:27:11Z",
+          "retweet_count": 375,
+          "like_count": 4795,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1998424249611211263",
+          "text": "Today in Cell, we published new research showing how AI can help accelerate cancer discovery. With GigaTIME, we can now simulate spatial proteomics from routine pathology slides, enabling population-scale analysis of tumor microenvironments across dozens of cancer types and",
+          "created_at": "2025-12-09T16:07:24Z",
+          "retweet_count": 389,
+          "like_count": 2548,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 492.02,
+        "change_1d": -2.7356611519856875,
+        "change_3d": -2.741758465103046,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996597609587470504",
+          "text": "With the Excel World Championship underway, I decided to take the M365 Copilot digital challenge. I’m no World Champ… but thanks to Agent Mode, I held my own! https://t.co/xoNBGxQtCA",
+          "created_at": "2025-12-04T15:08:59Z",
+          "retweet_count": 364,
+          "like_count": 3407,
+          "sentiment": -0.05263157894736842
+        },
+        "price_at_tweet": 480.84,
+        "change_1d": 0.4824889776225044,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1985807902385586516",
+          "text": "I’ve been using Voice in M365 Copilot every day, and it’s one of those features that quickly becomes indispensable at work. Excited for customers to try it out now. https://t.co/zR6qkasP4q",
+          "created_at": "2025-11-04T20:34:33Z",
+          "retweet_count": 192,
+          "like_count": 1476,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 514.33,
+        "change_1d": -1.3940466237629567,
+        "change_3d": -3.4044290630529126,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1985517602475508037",
+          "text": "1.1M tokens/sec on just one rack of GB300 GPUs in our Azure fleet. \n\nAn industry record made possible by our longstanding co-innovation with NVIDIA and expertise of running AI at production scale!\n\nhttps://t.co/1qLvoS2z70",
+          "created_at": "2025-11-04T01:21:00Z",
+          "retweet_count": 382,
+          "like_count": 3371,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 514.33,
+        "change_1d": -1.3940466237629567,
+        "change_3d": -3.4044290630529126,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983670341810712849",
+          "text": "1/ Just wrapped our earnings call and wanted to share a few highlights from the quarter.\n\nBottom line: We’ve got great momentum across our AI platform and our family of Copilots, fueling our increasing investments in both capital and talent.",
+          "created_at": "2025-10-29T23:00:38Z",
+          "retweet_count": 160,
+          "like_count": 1451,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983320062623916277",
+          "text": "I love how easy it’s becoming to learn on the go with podcasts in Copilot.\n\nI turned GitHub’s latest Octoverse report into a 5-minute pod — short, smart, and snappy. Packed with info on the seismic shifts happening in how people build software. Check it out! https://t.co/8iYTakXKTb",
+          "created_at": "2025-10-28T23:48:45Z",
+          "retweet_count": 129,
+          "like_count": 990,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 542.07,
+        "change_1d": -0.0959285701108889,
+        "change_3d": -4.475436751711053,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983259692580364424",
+          "text": "Great to be back at GitHub Universe today!\n\nThanks for the conversation, @jaredpalmer and @mariorod1. Nothing beats the energy of being surrounded by people building the future of software. https://t.co/lhxl3mfff5",
+          "created_at": "2025-10-28T19:48:52Z",
+          "retweet_count": 116,
+          "like_count": 1133,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 542.07,
+        "change_1d": -0.0959285701108889,
+        "change_3d": -4.475436751711053,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016671263117459675",
+          "text": "3/ High Value Agentic Experiences: We are entering an age of macro delegation and micro steering across domains. Intelligence using multiple models is built into multiple form factors.\n\nLots of momentum across our family of Copilots:\n\n· Consumer: Daily users of Copilot app up",
+          "created_at": "2026-01-29T00:34:31Z",
+          "retweet_count": 9,
+          "like_count": 158,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 433.5,
+        "change_1d": -0.7404844290657392,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016671261729206658",
+          "text": "2/ Agent Platform: Like in every platform shift, all software is being rewritten. A new app platform is born. You can think of agents as the new Apps.\n\nWe’re providing everything customers need to build their own agents, including model catalogs, harnesses for orchestration,",
+          "created_at": "2026-01-29T00:34:31Z",
+          "retweet_count": 16,
+          "like_count": 247,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 433.5,
+        "change_1d": -0.7404844290657392,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016671258939937076",
+          "text": "Just reported our quarterly results.\n\nWe are still in the beginning phases of AI diffusion and its broad GDP impact, and already we’ve built an AI business that is larger than some of our biggest franchises that took decades to build.\n\nOur quarterly cloud revenue crossed $50",
+          "created_at": "2026-01-29T00:34:30Z",
+          "retweet_count": 338,
+          "like_count": 3991,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 433.5,
+        "change_1d": -0.7404844290657392,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2015817415003893982",
+          "text": "Read more: https://t.co/sXgqhzTBtn",
+          "created_at": "2026-01-26T16:01:38Z",
+          "retweet_count": 36,
+          "like_count": 275,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 470.28,
+        "change_1d": 2.190184570893938,
+        "change_3d": -7.820872671599892,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2015817413200408959",
+          "text": "Our newest AI accelerator Maia 200 is now online in Azure.\n\nDesigned for industry-leading inference efficiency, it delivers 30% better performance per dollar than current systems.\n\nAnd with 10+ PFLOPS FP4 throughput, ~5 PFLOPS FP8, and 216GB HBM3e with 7TB/s of memory bandwidth https://t.co/UUiGikO1uB",
+          "created_at": "2026-01-26T16:01:38Z",
+          "retweet_count": 649,
+          "like_count": 4272,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 470.28,
+        "change_1d": 2.190184570893938,
+        "change_3d": -7.820872671599892,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014720111530410042",
+          "text": "Try it out: https://t.co/J5swabwla7",
+          "created_at": "2026-01-23T15:21:20Z",
+          "retweet_count": 27,
+          "like_count": 190,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 465.95,
+        "change_1d": null,
+        "change_3d": 0.9292842579675896,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014720109756219822",
+          "text": "So much of dev work happens in the context of a larger team, and now you can bring all of that work context into the GitHub Copilot CLI with Work IQ. https://t.co/VavUxEHHEs",
+          "created_at": "2026-01-23T15:21:20Z",
+          "retweet_count": 81,
+          "like_count": 552,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 465.95,
+        "change_1d": null,
+        "change_3d": 0.9292842579675896,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014360953111060894",
+          "text": "A new developer workflow and app paradigm is emerging, with an agentic execution loop at the core.\n\nWith the GitHub Copilot SDK, you can embed the same production-tested runtime behind Copilot CLI—multi-model, multi-step planning, tools, MCP integration, auth, streaming—directly",
+          "created_at": "2026-01-22T15:34:10Z",
+          "retweet_count": 267,
+          "like_count": 1778,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 451.14,
+        "change_1d": 3.2827946978764913,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014337035310698974",
+          "text": "Thanks @DavidSacks and @Jason for the fun conversation! https://t.co/AxHTklNaGg",
+          "created_at": "2026-01-22T13:59:08Z",
+          "retweet_count": 375,
+          "like_count": 2248,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 451.14,
+        "change_1d": 3.2827946978764913,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2005724537917431817",
+          "text": "A few reflections on the year ahead for our industry ... https://t.co/qYgf43D69u",
+          "created_at": "2025-12-29T19:36:09Z",
+          "retweet_count": 218,
+          "like_count": 1207,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 487.1,
+        "change_1d": 0.07801272839252626,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999384095881884119",
+          "text": "Chain of debate and march to Copilot continues in Mumbai today! https://t.co/Qu9VmuoCyv",
+          "created_at": "2025-12-12T07:41:29Z",
+          "retweet_count": 33,
+          "like_count": 140,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 478.53,
+        "change_1d": null,
+        "change_3d": -0.7752909953398909,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999183536277098925",
+          "text": "3/ We’re also bringing GPT-5.2 models to Microsoft Foundry and Copilot Studio, and starting rollout in our Copilot consumer experience.\n\nUltimately, for us this is all about model choice for all of our customers and with auto, you can rely on Copilot to pick the right model for",
+          "created_at": "2025-12-11T18:24:32Z",
+          "retweet_count": 22,
+          "like_count": 175,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999055307738321153",
+          "text": "Was fun to be at a dev event in Bengaluru and demo an app I built recently for deep research with multiple models and decision frameworks...think of it as \"chain of debate\"... Next stop, Copilot!! https://t.co/oiinGN05BA",
+          "created_at": "2025-12-11T09:55:00Z",
+          "retweet_count": 957,
+          "like_count": 8774,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 483.47,
+        "change_1d": -1.0217800484001187,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1998424250966053164",
+          "text": "Read more: https://t.co/RcsovR8l5y",
+          "created_at": "2025-12-09T16:07:25Z",
+          "retweet_count": 27,
+          "like_count": 185,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 492.02,
+        "change_1d": -2.7356611519856875,
+        "change_3d": -2.741758465103046,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1998376337938039091",
+          "text": "Thank you, PM @narendramodi ji, for an inspiring conversation on India’s AI opportunity. To support the country’s ambitions, Microsoft is committing US$17.5B—our largest investment ever in Asia—to help build the infrastructure, skills, and sovereign capabilities needed for https://t.co/NdFEpWzoyZ",
+          "created_at": "2025-12-09T12:57:01Z",
+          "retweet_count": 4672,
+          "like_count": 34782,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 492.02,
+        "change_1d": -2.7356611519856875,
+        "change_3d": -2.741758465103046,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990797471451394095",
+          "text": "https://t.co/c26o2C9fXV",
+          "created_at": "2025-11-18T15:01:19Z",
+          "retweet_count": 25,
+          "like_count": 221,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 493.79,
+        "change_1d": -1.3507766459426105,
+        "change_3d": -4.388505235018939,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990797469127749692",
+          "text": "10 PRINT \"ANTHROPIC + MICROSOFT + NVIDIA = MORE COMPUTE, COGNITION, AND CHOICE.\" https://t.co/oNAhstOY3l",
+          "created_at": "2025-11-18T15:01:18Z",
+          "retweet_count": 413,
+          "like_count": 3267,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 493.79,
+        "change_1d": -1.3507766459426105,
+        "change_3d": -4.388505235018939,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989755076353921404",
+          "text": "I’ve been thinking a lot about what the net benefit of the AI platform wave is. The real question is how to empower every company out there to get more out of this platform shift and build their own AI native capabilities and enterprise value (vs inadvertently just transfer their",
+          "created_at": "2025-11-15T17:59:12Z",
+          "retweet_count": 841,
+          "like_count": 6071,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1988653837461369307",
+          "text": "Today we announced our new Fairwater datacenter in Atlanta, connected with our first Fairwater site in Wisconsin and our broader Azure footprint to create the world’s first AI superfactory.\n\nFairwater exemplifies our vision for a fungible fleet: infra that can serve any workload, https://t.co/lRjNQcf0LF",
+          "created_at": "2025-11-12T17:03:16Z",
+          "retweet_count": 519,
+          "like_count": 2953,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 511.14,
+        "change_1d": -1.535782760104857,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1985807905145438659",
+          "text": "Learn more:\nhttps://t.co/TmRW7NpczI",
+          "created_at": "2025-11-04T20:34:33Z",
+          "retweet_count": 11,
+          "like_count": 71,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 514.33,
+        "change_1d": -1.3940466237629567,
+        "change_3d": -3.4044290630529126,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1985052892416573932",
+          "text": "Women in Blue = World Champions! 🏆🇮🇳\n\nRespect to 🇿🇦 South Africa for making their first-ever final 👏\n\nA truly historic day for women’s cricket—new chapters written, barriers broken, legends born.",
+          "created_at": "2025-11-02T18:34:24Z",
+          "retweet_count": 4692,
+          "like_count": 57269,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983949591394578915",
+          "text": "Learn more: https://t.co/Xj7LQ4F5Ux",
+          "created_at": "2025-10-30T17:30:17Z",
+          "retweet_count": 20,
+          "like_count": 110,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 525.76,
+        "change_1d": -1.5120967741935571,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983949531286008023",
+          "text": "We're taking the next big step with Researcher. \n\nWith Computer Use, it can now securely browse the open and gated web to find hard-to-locate information—even across hundreds of sites—and handle multi-step tasks to uncover insights, take action, and create richer reports. https://t.co/0SnSZsPw8a",
+          "created_at": "2025-10-30T17:30:02Z",
+          "retweet_count": 333,
+          "like_count": 2453,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 525.76,
+        "change_1d": -1.5120967741935571,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983670347972194551",
+          "text": "5/ Read more about our results here: https://t.co/jff9isRUFk",
+          "created_at": "2025-10-29T23:00:40Z",
+          "retweet_count": 18,
+          "like_count": 116,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983670344692199680",
+          "text": "3/ Our family of Copilots and agents surpassed over 150 million monthly active users across high value domains:\n\n· Information work: 90 percent of the F500 now use M365 Copilot – and we’re shipping updates very fast\n\n· Coding: GitHub Copilot now has 26 million-plus users\n\n·",
+          "created_at": "2025-10-29T23:00:39Z",
+          "retweet_count": 14,
+          "like_count": 141,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983670343098315127",
+          "text": "2/ We’re building a planet-scale cloud and AI factory.\n\nWe’ll increase our AI capacity by 80% this year, and nearly double our DC footprint over the next two.\n\nThat includes Fairwater in Wisconsin, the world’s most powerful AI datacenter, which will scale to two gigawatts alone.",
+          "created_at": "2025-10-29T23:00:39Z",
+          "retweet_count": 19,
+          "like_count": 179,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983372241988726838",
+          "text": "Read the blog: \nhttps://t.co/5xKnOUhiy1",
+          "created_at": "2025-10-29T03:16:06Z",
+          "retweet_count": 12,
+          "like_count": 95,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983372239052710047",
+          "text": "Super energized about this! With our App Builder and Workflow agents, you can now build apps and automate workflows in minutes, right in M365 Copilot chat. Here's an example. https://t.co/G6uYrdzHEI",
+          "created_at": "2025-10-29T03:16:05Z",
+          "retweet_count": 344,
+          "like_count": 2683,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 541.55,
+        "change_1d": -2.915704921059914,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983320065530572983",
+          "text": "Read the full report: \nhttps://t.co/wWFJUSkslq",
+          "created_at": "2025-10-28T23:48:46Z",
+          "retweet_count": 9,
+          "like_count": 53,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 542.07,
+        "change_1d": -0.0959285701108889,
+        "change_3d": -4.475436751711053,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983269885812846764",
+          "text": "Super fun conversation with @jordihays and @johncoogan. Thanks for bringing @tbpn to GitHub Universe! Work's not done! https://t.co/wf0PrpBZ4M",
+          "created_at": "2025-10-28T20:29:22Z",
+          "retweet_count": 122,
+          "like_count": 1619,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 542.07,
+        "change_1d": -0.0959285701108889,
+        "change_3d": -4.475436751711053,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1982953924077465850",
+          "text": "Learn more: https://t.co/29Ca21tnYx",
+          "created_at": "2025-10-27T23:33:51Z",
+          "retweet_count": 6,
+          "like_count": 45,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 531.52,
+        "change_1d": 1.9848735701384839,
+        "change_3d": -1.083684527393135,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1982953921590202717",
+          "text": "We’re continuing to make Copilot even more helpful in the everyday flow of work. Teams Mode lets groups co‑create with Copilot in a Teams chat. Watch how it works: https://t.co/B1MUNTpSWZ",
+          "created_at": "2025-10-27T23:33:51Z",
+          "retweet_count": 82,
+          "like_count": 554,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 531.52,
+        "change_1d": 1.9848735701384839,
+        "change_3d": -1.083684527393135,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1981782892402639171",
+          "text": "So many new Copilot updates this month. Here are some I can't stop using. https://t.co/tugCm1Nyy2",
+          "created_at": "2025-10-24T18:00:35Z",
+          "retweet_count": 336,
+          "like_count": 2816,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 523.61,
+        "change_1d": null,
+        "change_3d": 1.5106663356314753,
+        "is_impactful": false
+      }
+    ],
+    "correlation_1d": -0.1665289587404176,
+    "correlation_3d": -0.056529142393517536,
+    "positive_tweets_with_rise_1d": 0.0,
+    "positive_tweets_with_rise_3d": 0.0,
+    "performance_1w": -14.434641474884517,
+    "performance_1m": -13.052395652725506,
+    "performance_3m": -18.919078791702823,
+    "positive_tweets": 16,
+    "negative_tweets": 1,
+    "neutral_tweets": 33,
+    "total_tweets": 50,
+    "tweets_with_price_data": 48
+  },
+  {
+    "ceo_handle": "sundarpichai",
+    "ticker": "GOOGL",
+    "start_date": "2025-11-11T17:01:30Z",
+    "end_date": "2026-02-02T22:05:19Z",
+    "impacts": [
+      {
+        "tweet": {
+          "id": "2018445654511792413",
+          "text": "Incredible milestone! Congrats to everyone at @Waymo - onwards! https://t.co/zNZvl78dCp",
+          "created_at": "2026-02-02T22:05:19Z",
+          "retweet_count": 132,
+          "like_count": 2896,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 343.69,
+        "change_1d": -1.1580203089993943,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016746808966524958",
+          "text": "If I could turn back time.... excited for SATs last week and JEE Main this week in Gemini at no cost! https://t.co/mSp1Vn88gU",
+          "created_at": "2026-01-29T05:34:43Z",
+          "retweet_count": 869,
+          "like_count": 13244,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 338.25,
+        "change_1d": -0.07390983000739099,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016745374430703765",
+          "text": "Superproud of our AlphaGenome work, already over 1 million API calls from across 160 countries, here's to accelerating scientific discovery! https://t.co/zD5Arjmxrz",
+          "created_at": "2026-01-29T05:29:01Z",
+          "retweet_count": 284,
+          "like_count": 2885,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 338.25,
+        "change_1d": -0.07390983000739099,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014507802627305658",
+          "text": "This is a great use case for personal intelligence in Gemini app (for pro users)! https://t.co/qBzQjO87tA",
+          "created_at": "2026-01-23T01:17:42Z",
+          "retweet_count": 107,
+          "like_count": 1725,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 327.93,
+        "change_1d": null,
+        "change_3d": 1.6253468728082163,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2010403599927722171",
+          "text": "At the @NRFBigShow today, @Walmart and @Wing shared the expansion of their delivery service to 150 more stores. Houston delivery starting Jan 15 and when the expansion’s complete will reach 40M people. \n\nGoing to be a big year for Wing! https://t.co/YwZwaiWi0j",
+          "created_at": "2026-01-11T17:29:04Z",
+          "retweet_count": 231,
+          "like_count": 2150,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1997741478999904575",
+          "text": "Congrats to champion @LandoNorris and to @OscarPiastri and @McLarenF1 on an incredible season! https://t.co/t16fb7yDyI",
+          "created_at": "2025-12-07T18:54:19Z",
+          "retweet_count": 240,
+          "like_count": 5586,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996783899943620967",
+          "text": "Love seeing all the isometric 3D trends using Nano Banana Pro and pulling in live data - thought I’d give it a try myself in honor of the Ashes second test underway. Thanks to @dotey and @TechieBySA for the inspiration. https://t.co/GAu1g3SvaZ",
+          "created_at": "2025-12-05T03:29:14Z",
+          "retweet_count": 265,
+          "like_count": 4819,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 321.27,
+        "change_1d": null,
+        "change_3d": -2.35004824602358,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1994118140767424692",
+          "text": "Happy Thanksgiving to all celebrating! \n\nAsked @NanoBanana pro to turn Thanksgiving search trends into an infographic for a table placemat - hope it sparks some fun dinner conversations:) https://t.co/Xk6h1301rS",
+          "created_at": "2025-11-27T18:56:28Z",
+          "retweet_count": 240,
+          "like_count": 3043,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1993509460577583300",
+          "text": "What I loved about the launch of Gemini 3 last week was seeing so many products (from Google and others in the ecosystem) improve their experience with it on Day 1, truly innovation at scale. Gemini is a manifestation of our decade long AI first strategy, I see it as a through https://t.co/cedSKDq8Pg",
+          "created_at": "2025-11-26T02:37:47Z",
+          "retweet_count": 257,
+          "like_count": 2802,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 319.95,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991522556642488811",
+          "text": "You went 🍌🍌 for Nano Banana. Now, meet Nano Banana Pro. \n\nIt’s SOTA for image generation + editing with more advanced world knowledge, text rendering, precision + controls. Built on Gemini 3, it’s really good at complex infographics - much like how engineers see the world:) https://t.co/iJgs3LthPP",
+          "created_at": "2025-11-20T15:02:32Z",
+          "retweet_count": 2040,
+          "like_count": 23920,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 289.45,
+        "change_1d": 3.527379512869248,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990865172152660047",
+          "text": "2/ Gemini 3 advances multimodal reasoning by combining state-of-the-art reasoning with vision and spatial understanding\n\nSo it can analyze your long-form sports videos to give you a performance audit, identifying specific technical issues and providing the exact drills to fix https://t.co/IHvy5sHKVc",
+          "created_at": "2025-11-18T19:30:20Z",
+          "retweet_count": 60,
+          "like_count": 1086,
+          "sentiment": -0.05263157894736842
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990812770762215649",
+          "text": "Introducing Gemini 3 ✨\n\nIt’s the best model in the world for multimodal understanding, and our most powerful agentic + vibe coding model yet. Gemini 3 can bring any idea to life, quickly grasping context and intent so you can get what you need with less prompting. \n\nFind Gemini https://t.co/JI7xKkAZXZ",
+          "created_at": "2025-11-18T16:02:06Z",
+          "retweet_count": 2711,
+          "like_count": 21638,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1988398570593300537",
+          "text": "Great to see this partnership that will expand access to @GeminiApp (and 6 months of Google AI Plus) in Africa without needing to use any mobile data. https://t.co/bGjs5PPOdB",
+          "created_at": "2025-11-12T00:08:56Z",
+          "retweet_count": 107,
+          "like_count": 1176,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": 286.71,
+        "change_1d": -2.839105716577722,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018389713372299717",
+          "text": "Read more here: https://t.co/HasN1K0ZlX",
+          "created_at": "2026-02-02T18:23:02Z",
+          "retweet_count": 22,
+          "like_count": 172,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 343.69,
+        "change_1d": -1.1580203089993943,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2018389711111455090",
+          "text": "Our AI tools like DeepVariant and DeepPolisher are helping researchers sequence genomes for endangered species, compressing what once took years into just days. \n\nGenomes of 13 species are free and available for use by conservation researchers. Now @Googleorg is helping partners https://t.co/CjwxEsoBhZ",
+          "created_at": "2026-02-02T18:23:01Z",
+          "retweet_count": 162,
+          "like_count": 1314,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 343.69,
+        "change_1d": -1.1580203089993943,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2017091863380185249",
+          "text": "Now Google can help with your Googly:) https://t.co/J4HwGw6dLW",
+          "created_at": "2026-01-30T04:25:50Z",
+          "retweet_count": 300,
+          "like_count": 5124,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 338.0,
+        "change_1d": null,
+        "change_3d": 1.683431952662721,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016979483270795418",
+          "text": "Read more here: https://t.co/bIwHAtnumr",
+          "created_at": "2026-01-29T20:59:17Z",
+          "retweet_count": 32,
+          "like_count": 329,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 338.25,
+        "change_1d": -0.07390983000739099,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2016979481832067264",
+          "text": "Project Genie is a prototype web app powered by Genie 3, Nano Banana Pro + Gemini that lets you create your own interactive worlds. I’ve been playing around with it a bit and it’s…out of this world:)\n\nRolling out now for US Ultra subscribers. https://t.co/rNDXn3VUF6",
+          "created_at": "2026-01-29T20:59:16Z",
+          "retweet_count": 611,
+          "like_count": 6978,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 338.25,
+        "change_1d": -0.07390983000739099,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2014067664503668873",
+          "text": "Helpful update for students, you can now take full practice SATs for free in the @GeminiApp. \n\nIt uses vetted content from @ThePrincetonRev and gives you feedback straight away. Starting with the SAT today, but more tests are on the way!\n\nhttps://t.co/S93SAtss4F",
+          "created_at": "2026-01-21T20:08:45Z",
+          "retweet_count": 1603,
+          "like_count": 15252,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 328.38,
+        "change_1d": 0.6577745295085039,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011475856800030910",
+          "text": "This beta is rolling out today to Google AI Pro and AI Ultra subscribers in the US on the web, Android, and iOS.\n\nRead more from @joshwoodward: https://t.co/lhFMNEkn8O",
+          "created_at": "2026-01-14T16:29:50Z",
+          "retweet_count": 40,
+          "like_count": 460,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.84,
+        "change_1d": -0.9111481657932355,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011475851670667356",
+          "text": "Answering a top request from our users, we’re introducing Personal Intelligence in the @GeminiApp. You can now securely connect to Google apps for an even more helpful experience.\n\nPersonal Intelligence combines two core strengths: reasoning across complex sources and retrieving https://t.co/4hft0KH3du",
+          "created_at": "2026-01-14T16:29:49Z",
+          "retweet_count": 329,
+          "like_count": 3156,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.84,
+        "change_1d": -0.9111481657932355,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011184919347888474",
+          "text": "Available now via Hugging Face or Vertex AI on Google Cloud. More details in the blog: https://t.co/XGJfqu7EQh",
+          "created_at": "2026-01-13T21:13:45Z",
+          "retweet_count": 66,
+          "like_count": 710,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.97,
+        "change_1d": -0.03869393100576012,
+        "change_3d": -1.7769443700330467,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011184917670216196",
+          "text": "MedGemma 1.5 is a major upgrade to our open models for healthcare developers. \n\nThe new 4B model enables developers to build applications that natively interpret full 3D scans (CTs, MRIs) with high efficiency - a first, we believe, for an open medical generalist model. MedGemma",
+          "created_at": "2026-01-13T21:13:45Z",
+          "retweet_count": 712,
+          "like_count": 6045,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.97,
+        "change_1d": -0.03869393100576012,
+        "change_3d": -1.7769443700330467,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011143122844303418",
+          "text": "Full details on the updates, including how we're using SynthID to help people identify AI-generated content: https://t.co/E2c5OuIhTg",
+          "created_at": "2026-01-13T18:27:40Z",
+          "retweet_count": 23,
+          "like_count": 341,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.97,
+        "change_1d": -0.03869393100576012,
+        "change_3d": -1.7769443700330467,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2011143120516469199",
+          "text": "Today, Veo 3.1 Ingredients to Video is getting more expressive + portrait mode has arrived (we heard you!)\n\nYou can now create vertical clips with livelier movement and better control directly in the @Geminiapp, @YouTube &amp; Google Vids.\n\nAll this plus state-of-the-art upscaling to https://t.co/vCvGEelldS",
+          "created_at": "2026-01-13T18:27:39Z",
+          "retweet_count": 280,
+          "like_count": 2327,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 335.97,
+        "change_1d": -0.03869393100576012,
+        "change_3d": -1.7769443700330467,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2010382054073291208",
+          "text": "UCP is endorsed by 20+ industry leaders, compatible with A2A, and available starting today. Read more about UCP and everything we announced at @NRFBigShow: https://t.co/b32sPEacZ3",
+          "created_at": "2026-01-11T16:03:27Z",
+          "retweet_count": 97,
+          "like_count": 1076,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2010382050570932299",
+          "text": "AI agents will be a big part of how we shop in the not-so-distant future.\n\nTo help lay the groundwork, we partnered with Shopify, Etsy, Wayfair, Target and Walmart to create the Universal Commerce Protocol, a new open standard for agents and systems to talk to each other across https://t.co/8gDxDWjF9q",
+          "created_at": "2026-01-11T16:03:26Z",
+          "retweet_count": 1970,
+          "like_count": 16368,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2009291313888547131",
+          "text": "We launched Gmail on April Fool’s Day in 2004. 20+ years later, we’re bringing Gmail into the Gemini era. \n\nAI Overviews, Suggested personalized replies, Proof read, AI Inbox with new streamlined views and suggested topics to catch-up on and loads more, read the full details",
+          "created_at": "2026-01-08T15:49:14Z",
+          "retweet_count": 574,
+          "like_count": 6618,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 325.44,
+        "change_1d": 0.9617748279252689,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2004235491089305921",
+          "text": "Merry Christmas! Wishing you a joyful holiday with friends and family. https://t.co/B4m23IoXXf",
+          "created_at": "2025-12-25T16:59:12Z",
+          "retweet_count": 635,
+          "like_count": 10287,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2001360295726584072",
+          "text": "Gemini 3 Flash is significantly faster and more efficient than 2.5 Pro.\n\nWatch below as 3 Flash generates complex graphics, 3D models, and a web app before the previous generation even finishes processing⚡ https://t.co/MVuMouNRCX",
+          "created_at": "2025-12-17T18:34:12Z",
+          "retweet_count": 422,
+          "like_count": 4923,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 296.72,
+        "change_1d": 1.9344836883256782,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2001326525933822435",
+          "text": "Read more: https://t.co/FgxR9t6iid",
+          "created_at": "2025-12-17T16:20:01Z",
+          "retweet_count": 49,
+          "like_count": 496,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 296.72,
+        "change_1d": 1.9344836883256782,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "2001326061787942957",
+          "text": "We’re back in a Flash ⚡\n\nGemini 3 Flash is our latest model with frontier intelligence built for lightning speed, and pushing the Pareto Frontier of performance and efficiency. It outperforms 2.5 Pro while being 3x faster at a fraction of the cost.\n\nWith this release, Gemini 3’s https://t.co/vTS9nKEZe9",
+          "created_at": "2025-12-17T16:18:10Z",
+          "retweet_count": 654,
+          "like_count": 7179,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 296.72,
+        "change_1d": 1.9344836883256782,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1999627455263645822",
+          "text": "Android Emergency Live Video launched. You can now easily share vital visual information with one tap to emergency services so they can assess situations faster and guide you through life-saving steps until help arrives. https://t.co/3rb2MiEIeG",
+          "created_at": "2025-12-12T23:48:31Z",
+          "retweet_count": 335,
+          "like_count": 2673,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 309.29,
+        "change_1d": null,
+        "change_3d": -0.34595363574638466,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996784121545441470",
+          "text": "Prompt: Research yesterday's score from the England vs Australia Test Match, then create a 45° top-down photorealistic isometric miniature cricket stadium diorama, use soft, refined textures with realistic PBR materials and gentle, lifelike lighting and shadows. Floating rounded",
+          "created_at": "2025-12-05T03:30:07Z",
+          "retweet_count": 30,
+          "like_count": 562,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 321.27,
+        "change_1d": null,
+        "change_3d": -2.35004824602358,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1996656722979754060",
+          "text": "Gemini 3 Deep Think mode brings our strongest reasoning capabilities yet, now rolling out to @GeminiApp Ultra subscribers. Cool example of how it can simulate complex 3D architecture. https://t.co/VjX63a4Mh5",
+          "created_at": "2025-12-04T19:03:53Z",
+          "retweet_count": 448,
+          "like_count": 5681,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 317.62,
+        "change_1d": 1.1491719665008429,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991613220969423272",
+          "text": "iykyk https://t.co/LCqGm5VSQf",
+          "created_at": "2025-11-20T21:02:48Z",
+          "retweet_count": 672,
+          "like_count": 10896,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 289.45,
+        "change_1d": 3.527379512869248,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991531384545120560",
+          "text": "Check now 😀 https://t.co/9AlC70KS7a",
+          "created_at": "2025-11-20T15:37:37Z",
+          "retweet_count": 304,
+          "like_count": 10231,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 289.45,
+        "change_1d": 3.527379512869248,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991522558685106325",
+          "text": "Available in @GeminiApp, rolling out in @GoogleAIStudio + much more. Full details and availability here: https://t.co/DnV0eIfkRG",
+          "created_at": "2025-11-20T15:02:33Z",
+          "retweet_count": 72,
+          "like_count": 1093,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 289.45,
+        "change_1d": 3.527379512869248,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990866407060627697",
+          "text": "5/ We're introducing Gemini Agent: It uses Gemini 3's advanced reasoning to break down complex tasks, like booking local services or organizing your inbox, into actionable steps.\n\nIt can then propose actions like drafting your replies or archiving emails, all using deeper https://t.co/MELURXImWd",
+          "created_at": "2025-11-18T19:35:14Z",
+          "retweet_count": 65,
+          "like_count": 988,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990865945883996395",
+          "text": "4/ Visual layout moves beyond text with an immersive, magazine-style view (photos + modules) that you can interact with to further customize your response.\n\nAsk it to “plan a 3-day trip to Rome” and you get an explorable itinerary tailored to your preferences👇🏻 https://t.co/pSJ3z9lNvQ",
+          "created_at": "2025-11-18T19:33:24Z",
+          "retweet_count": 67,
+          "like_count": 1104,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990865437693784181",
+          "text": "3/ It also brings incredible reasoning power to Search and new generative UI experiences. \n\nGet dynamic visual layouts with interactive tools and simulations, generated specifically for your question, for example explaining the physics of the three body problem. https://t.co/TNmHAgNKMy",
+          "created_at": "2025-11-18T19:31:23Z",
+          "retweet_count": 43,
+          "like_count": 807,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990864860339396956",
+          "text": "1/ Gemini 3 in action, a quick🧵 \n\nYou can give Gemini 3 anything (images, pdfs, scribbles, etc) and it will create whatever you like: an image becomes a board game, a napkin sketch transformed into a full website, a diagram could turn into an interactive lesson. https://t.co/xCry35mFbW",
+          "created_at": "2025-11-18T19:29:05Z",
+          "retweet_count": 789,
+          "like_count": 6878,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990850427164979318",
+          "text": "Its been an exciting 7 days of shipping \n- New much improved Gemini Live on Android and iOS\n- Gemini 3.0 Pro in Gemini App and AI Studio\n- Search AI Mode with Gemini 3.0 Pro and much improved shopping experience\n- Google Antigravity, our next generation agentic IDE\n-- Nanobanana",
+          "created_at": "2025-11-18T18:31:44Z",
+          "retweet_count": 780,
+          "like_count": 13008,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990813044088229979",
+          "text": "Read more of the details here: https://t.co/PSgPf7Q3xD",
+          "created_at": "2025-11-18T16:03:11Z",
+          "retweet_count": 58,
+          "like_count": 880,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990812918737203499",
+          "text": "https://t.co/9IWOXOxLCG",
+          "created_at": "2025-11-18T16:02:41Z",
+          "retweet_count": 299,
+          "like_count": 3242,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990804801941361137",
+          "text": "Geminiii",
+          "created_at": "2025-11-18T15:30:26Z",
+          "retweet_count": 931,
+          "like_count": 19381,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 284.28,
+        "change_1d": 3.0005628253834358,
+        "change_3d": 5.410158998170837,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989481514393121239",
+          "text": "🤔🤔 https://t.co/qOnZ87TUh0",
+          "created_at": "2025-11-14T23:52:10Z",
+          "retweet_count": 828,
+          "like_count": 16695,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 276.41,
+        "change_1d": null,
+        "change_3d": 3.1149379544878824,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989469262873071800",
+          "text": "Read more about our investment here: https://t.co/ZotwdF0eIB",
+          "created_at": "2025-11-14T23:03:29Z",
+          "retweet_count": 39,
+          "like_count": 450,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 276.41,
+        "change_1d": null,
+        "change_3d": 3.1149379544878824,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989468970400055487",
+          "text": "Today, we're announcing a new $40B investment in Texas through 2027 to build Cloud &amp; AI infrastructure and support thousands of new jobs. \n\nThis includes new data centers in Armstrong and Haskell Counties and a major investment to strengthen energy resilience and abundance. We're https://t.co/XykM8keWOY",
+          "created_at": "2025-11-14T23:02:19Z",
+          "retweet_count": 897,
+          "like_count": 10759,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 276.41,
+        "change_1d": null,
+        "change_3d": 3.1149379544878824,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1988291003409932526",
+          "text": "Today we honor all veterans and their families, including those in the Google community, for their service and sacrifice to our country.\n\nThank you to guest artist, US Navy veteran Kristin Cronic, for creating today's Veterans Day Doodle. Her hand-painted artwork depicts a https://t.co/DXmBzkJRdU",
+          "created_at": "2025-11-11T17:01:30Z",
+          "retweet_count": 90,
+          "like_count": 1124,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 291.31,
+        "change_1d": -1.5790738388658208,
+        "change_3d": -5.114826130239257,
+        "is_impactful": false
+      }
+    ],
+    "correlation_1d": -0.24540099206290075,
+    "correlation_3d": -0.1562109383689469,
+    "positive_tweets_with_rise_1d": 16.666666666666664,
+    "positive_tweets_with_rise_3d": 8.333333333333332,
+    "performance_1w": 1.5423703482289548,
+    "performance_1m": 7.79311438997303,
+    "performance_3m": 19.485772572192317,
+    "positive_tweets": 12,
+    "negative_tweets": 1,
+    "neutral_tweets": 37,
+    "total_tweets": 50,
+    "tweets_with_price_data": 44
+  },
+  {
+    "ceo_handle": "jeffbezos",
+    "ticker": "AMZN",
+    "start_date": "2022-11-22T12:56:35Z",
+    "end_date": "2025-11-21T21:50:43Z",
+    "impacts": [
+      {
+        "tweet": {
+          "id": "1989358416532488406",
+          "text": "Good overview of the landing. We nominally target a few hundred feet away from Jacklyn to avoid a severe impact if engines fail to start or start slowly. We’ll incrementally reduce that conservatism over time. We are all excited and grateful for yesterday. Amazing performance by https://t.co/DCEMsuSyPm",
+          "created_at": "2025-11-14T15:43:01Z",
+          "retweet_count": 3707,
+          "like_count": 37677,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1881131658331759053",
+          "text": "So cool and what incredible effort. Amazing. https://t.co/iqW4bmBFtu",
+          "created_at": "2025-01-20T00:08:31Z",
+          "retweet_count": 379,
+          "like_count": 4669,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1854184441511571765",
+          "text": "Big congratulations to our 45th and now 47th President on an extraordinary political comeback and decisive victory. No nation has bigger opportunities. Wishing @realDonaldTrump all success in leading and uniting the America we all love.",
+          "created_at": "2024-11-06T15:29:54Z",
+          "retweet_count": 17843,
+          "like_count": 268691,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1620466730572349442",
+          "text": "Episode 3 of Last of Us is unbelievably good story telling. I am in awe of @Nick_Offerman performance. Incredible.",
+          "created_at": "2023-01-31T16:59:10Z",
+          "retweet_count": 1334,
+          "like_count": 28266,
+          "sentiment": 0.10526315789473684
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1911745155960299648",
+          "text": "I love this crew! https://t.co/KfcKkdNQGp",
+          "created_at": "2025-04-14T11:35:38Z",
+          "retweet_count": 1554,
+          "like_count": 18137,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1881532212530856378",
+          "text": "The peaceful transfer of power is a hallmark of America, and it’s been an honor to witness it up close. Congratulations to President @realDonaldTrump and Vice President @JDVance. Excited to collaborate on accelerating innovation and supercharging the American economy. https://t.co/u7sqLlXRUj",
+          "created_at": "2025-01-21T02:40:11Z",
+          "retweet_count": 4665,
+          "like_count": 82565,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879943522863968306",
+          "text": "Good luck today @elonmusk and the whole spacex team!!",
+          "created_at": "2025-01-16T17:27:18Z",
+          "retweet_count": 3155,
+          "like_count": 77386,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1878451427493765161",
+          "text": "Amazon is working with first responders, nonprofit partners and humanitarian relief agencies on the ground in Los Angeles to get them thousands of vital supplies. The team will continue to support relief efforts in coordination with community partners and humanitarian https://t.co/7VEPd5YR0E",
+          "created_at": "2025-01-12T14:38:14Z",
+          "retweet_count": 1503,
+          "like_count": 14555,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1812315786507088370",
+          "text": "Our former President showed tremendous grace and courage under literal fire tonight. So thankful for his safety and so sad for the victims and their families.",
+          "created_at": "2024-07-14T02:38:49Z",
+          "retweet_count": 11799,
+          "like_count": 206229,
+          "sentiment": -0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1659576309432090625",
+          "text": "Honored to be on this journey with @NASA to land astronauts on the Moon — this time to stay. Together, we’ll be solving the boil-off problem and making LOX-LH2 a storable propellant combination, pushing forward the state of the art for all deep space missions. #Artemis https://t.co/Y0zDhnp1qX",
+          "created_at": "2023-05-19T15:06:40Z",
+          "retweet_count": 2262,
+          "like_count": 14573,
+          "sentiment": -0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1595038534897139712",
+          "text": "This year’s Bezos Day 1 Families Fund grants go to 40 incredible groups working to end homelessness in the U.S. In 5 years, we’ve given more than $500 million to 167 orgs – helping expand their support of families in need. Honored to support these groups. https://t.co/8fulJLNrkZ https://t.co/17dX56oApm",
+          "created_at": "2022-11-22T12:56:35Z",
+          "retweet_count": 994,
+          "like_count": 7187,
+          "sentiment": 0.05263157894736842
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1991987664766328990",
+          "text": "The Blue Moon MK1 flight vehicle that will land near Shackleton crater. We’ll soon be doing fully integrated checkout tests. At over 26 feet tall (8 meters), it’s smaller than our MK2 human lander but larger than the historic Apollo lander. https://t.co/N8V8vqOYaV",
+          "created_at": "2025-11-21T21:50:43Z",
+          "retweet_count": 1574,
+          "like_count": 11966,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 220.69,
+        "change_1d": null,
+        "change_3d": 2.5329647922425136,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990806387837055153",
+          "text": "https://t.co/btsz0Sla4B",
+          "created_at": "2025-11-18T15:36:44Z",
+          "retweet_count": 802,
+          "like_count": 9655,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 222.55,
+        "change_1d": 0.06290721186249668,
+        "change_3d": -0.8357672433161147,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1990796256751575547",
+          "text": "https://t.co/5dLzRlGajc",
+          "created_at": "2025-11-18T14:56:29Z",
+          "retweet_count": 2746,
+          "like_count": 29965,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 222.55,
+        "change_1d": 0.06290721186249668,
+        "change_3d": -0.8357672433161147,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989856098409758793",
+          "text": "https://t.co/Li3R56xACF",
+          "created_at": "2025-11-16T00:40:38Z",
+          "retweet_count": 880,
+          "like_count": 9287,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989704582025679295",
+          "text": "https://t.co/T3ZCIEcn0f",
+          "created_at": "2025-11-15T14:38:33Z",
+          "retweet_count": 1787,
+          "like_count": 20824,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989405079594848719",
+          "text": "https://t.co/EVWHx2q0s7",
+          "created_at": "2025-11-14T18:48:26Z",
+          "retweet_count": 5012,
+          "like_count": 65628,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989381345903247410",
+          "text": "https://t.co/R8c1YUDNgz",
+          "created_at": "2025-11-14T17:14:08Z",
+          "retweet_count": 1831,
+          "like_count": 23823,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989178820898017374",
+          "text": "Leaving Earth… https://t.co/ltSY1ycTtp",
+          "created_at": "2025-11-14T03:49:22Z",
+          "retweet_count": 725,
+          "like_count": 8406,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989162940814290987",
+          "text": "https://t.co/tcU5bePWbL",
+          "created_at": "2025-11-14T02:46:16Z",
+          "retweet_count": 829,
+          "like_count": 10604,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989141204475506842",
+          "text": "https://t.co/ayqA7hcSsB",
+          "created_at": "2025-11-14T01:19:54Z",
+          "retweet_count": 660,
+          "like_count": 9158,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989127874507640934",
+          "text": "https://t.co/kN8h6M3ZHd",
+          "created_at": "2025-11-14T00:26:56Z",
+          "retweet_count": 854,
+          "like_count": 10479,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 234.69,
+        "change_1d": null,
+        "change_3d": -0.7754910733307738,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989092331635765378",
+          "text": "https://t.co/Q1LZUDNbnl",
+          "created_at": "2025-11-13T22:05:42Z",
+          "retweet_count": 3650,
+          "like_count": 37713,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 237.58,
+        "change_1d": -1.2164323596262374,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989091706550284459",
+          "text": "https://t.co/mRFHLuLi7Q",
+          "created_at": "2025-11-13T22:03:13Z",
+          "retweet_count": 1070,
+          "like_count": 10295,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 237.58,
+        "change_1d": -1.2164323596262374,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1989090084902318469",
+          "text": "https://t.co/uD4FJ3xC8M",
+          "created_at": "2025-11-13T21:56:46Z",
+          "retweet_count": 6601,
+          "like_count": 81343,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 237.58,
+        "change_1d": -1.2164323596262374,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1988986635439206483",
+          "text": "On station https://t.co/W45tqZUhAw",
+          "created_at": "2025-11-13T15:05:42Z",
+          "retweet_count": 904,
+          "like_count": 14146,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 237.58,
+        "change_1d": -1.2164323596262374,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1987237636336124387",
+          "text": "https://t.co/rkarkk5cBX",
+          "created_at": "2025-11-08T19:15:48Z",
+          "retweet_count": 1757,
+          "like_count": 20934,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1984093316657627215",
+          "text": "https://t.co/czKrhbFgL6",
+          "created_at": "2025-10-31T03:01:24Z",
+          "retweet_count": 726,
+          "like_count": 6876,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 244.22,
+        "change_1d": null,
+        "change_3d": 4.004586028990255,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1983365206211453411",
+          "text": "https://t.co/LmDcLNSrkn",
+          "created_at": "2025-10-29T02:48:08Z",
+          "retweet_count": 742,
+          "like_count": 8462,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 230.3,
+        "change_1d": -3.2305688232739898,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1973545586159943742",
+          "text": "17 minute burn — beautifully boring https://t.co/X4UMzQFx25",
+          "created_at": "2025-10-02T00:28:29Z",
+          "retweet_count": 381,
+          "like_count": 5095,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": 222.41,
+        "change_1d": -1.3038982060159192,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1969191669359661535",
+          "text": "What a view. From our new free flying camera — deployed on yesterday’s New Shepard mission. (The “bubble” is the seam between two 180 degree lenses.) https://t.co/X6nX5vz2YT",
+          "created_at": "2025-09-20T00:07:34Z",
+          "retweet_count": 1607,
+          "like_count": 14919,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1909730796770041995",
+          "text": "Meet the hosts of NS-31: Charissa Thompson, Kristin Fisher, and Ariane Cornell. Let’s go! https://t.co/7qsJICZ7XG",
+          "created_at": "2025-04-08T22:11:17Z",
+          "retweet_count": 463,
+          "like_count": 3062,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1894757287052362088",
+          "text": "I shared this note with the Washington Post team this morning:\n\nI’m writing to let you know about a change coming to our opinion pages. \n \nWe are going to be writing every day in support and defense of two pillars: personal liberties and free markets. We’ll cover other topics too",
+          "created_at": "2025-02-26T14:31:54Z",
+          "retweet_count": 16811,
+          "like_count": 144918,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1892590064766484622",
+          "text": "Who’d you pick as the next Bond? https://t.co/u7nBaRROlf",
+          "created_at": "2025-02-20T15:00:08Z",
+          "retweet_count": 2275,
+          "like_count": 40964,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1880381448458498524",
+          "text": "https://t.co/5udPtIuMhX",
+          "created_at": "2025-01-17T22:27:27Z",
+          "retweet_count": 679,
+          "like_count": 7895,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1880301559269192006",
+          "text": "https://t.co/7WWlM9mQWs",
+          "created_at": "2025-01-17T17:10:00Z",
+          "retweet_count": 669,
+          "like_count": 7356,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1880012258698498278",
+          "text": "https://t.co/jmXUBbZ4qs",
+          "created_at": "2025-01-16T22:00:26Z",
+          "retweet_count": 892,
+          "like_count": 13923,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879976313114779850",
+          "text": "https://t.co/rNLb4SHnYu",
+          "created_at": "2025-01-16T19:37:35Z",
+          "retweet_count": 699,
+          "like_count": 13824,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879966373167939985",
+          "text": "So much heart, sweat, persistence. Huge congrats and kudos team Blue! https://t.co/qFKDnEzLrc",
+          "created_at": "2025-01-16T18:58:06Z",
+          "retweet_count": 611,
+          "like_count": 12641,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879950452118438152",
+          "text": "https://t.co/ZhoKY3oEIP",
+          "created_at": "2025-01-16T17:54:50Z",
+          "retweet_count": 928,
+          "like_count": 12634,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879829885474230744",
+          "text": "https://t.co/EXxkkoPhYI",
+          "created_at": "2025-01-16T09:55:44Z",
+          "retweet_count": 5255,
+          "like_count": 83840,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879827723516092583",
+          "text": "https://t.co/98GjOD49jN",
+          "created_at": "2025-01-16T09:47:09Z",
+          "retweet_count": 2934,
+          "like_count": 50302,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879815976142917721",
+          "text": "https://t.co/kIEqPxxwa7",
+          "created_at": "2025-01-16T09:00:28Z",
+          "retweet_count": 1728,
+          "like_count": 24833,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879815702447829030",
+          "text": "https://t.co/o6sMiSABkR",
+          "created_at": "2025-01-16T08:59:23Z",
+          "retweet_count": 2394,
+          "like_count": 31661,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1879799319693603137",
+          "text": "https://t.co/Y2jjkkZsQv",
+          "created_at": "2025-01-16T07:54:17Z",
+          "retweet_count": 3431,
+          "like_count": 37371,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1877864760835793174",
+          "text": "Leave before launch https://t.co/ME7yGzo5HA",
+          "created_at": "2025-01-10T23:47:02Z",
+          "retweet_count": 1029,
+          "like_count": 14774,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1872824935732916265",
+          "text": "Next stop launch https://t.co/GQFz4XxEt5",
+          "created_at": "2024-12-28T02:00:34Z",
+          "retweet_count": 2518,
+          "like_count": 27602,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1870833626079752672",
+          "text": "Furthermore, this whole thing is completely false — none of this is happening. The old adage “don’t believe everything you read” is even more true today than it ever has been. Now lies can get ALL the way around the world before the truth can get its pants on. So be careful out https://t.co/wz2SWp6wBZ",
+          "created_at": "2024-12-22T14:07:49Z",
+          "retweet_count": 2745,
+          "like_count": 42007,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1625224820786094080",
+          "text": "Big milestone. Kudos and congrats to the whole Zoox team! https://t.co/Uupuawgid1",
+          "created_at": "2023-02-13T20:06:07Z",
+          "retweet_count": 895,
+          "like_count": 5722,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      },
+      {
+        "tweet": {
+          "id": "1619418820984340481",
+          "text": "Thank you Bill and Tim. So nice. Gratitude. https://t.co/keisiOiFY5",
+          "created_at": "2023-01-28T19:35:08Z",
+          "retweet_count": 295,
+          "like_count": 3050,
+          "sentiment": 0.0
+        },
+        "price_at_tweet": null,
+        "change_1d": null,
+        "change_3d": null,
+        "is_impactful": false
+      }
+    ],
+    "correlation_1d": null,
+    "correlation_3d": -0.14349470197104383,
+    "positive_tweets_with_rise_1d": 0.0,
+    "positive_tweets_with_rise_3d": 0.0,
+    "performance_1w": -2.4767042667974506,
+    "performance_1m": 5.350993377483445,
+    "performance_3m": -4.628297362110305,
+    "positive_tweets": 9,
+    "negative_tweets": 2,
+    "neutral_tweets": 39,
+    "total_tweets": 50,
+    "tweets_with_price_data": 17
+  }
+]

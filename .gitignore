@@ -33,10 +33,11 @@ setup-env.ps1
 # Output files
 *.pl
 *.json
+!ceo_config.json
+!data/results.json
 *.csv
 *.png
 facts.pl
-results.json
 output/
 web/static/data/
 
