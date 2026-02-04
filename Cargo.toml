@@ -1,0 +1,43 @@
+[package]
+name = "ceo-tweet-analyzer"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <you@example.com>"]
+description = "Analyze CEO tweets and correlate with stock price movements using Rust, Prolog, and Lean 4"
+
+[dependencies]
+# CLI parsing
+clap = { version = "4.5", features = ["derive"] }
+
+# Async runtime & HTTP
+tokio = { version = "1.41", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Date/time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Prolog integration
+scryer-prolog = "0.9"
+
+# Statistics & correlation
+statrs = "0.17"
+
+# Optional: Plotting (can add later)
+# plotters = "0.3"
+
+[dev-dependencies]
+# Testing
+tokio-test = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
