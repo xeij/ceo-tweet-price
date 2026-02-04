@@ -137,8 +137,8 @@ async fn fetch_user_tweets(
             "{}/users/{}/tweets?max_results=100&tweet.fields=created_at,public_metrics&start_time={}&end_time={}",
             TWITTER_API_BASE,
             user_id,
-            start_date.to_rfc3339(),
-            end_date.to_rfc3339()
+            start_date.format("%Y-%m-%dT%H:%M:%SZ"),
+            end_date.format("%Y-%m-%dT%H:%M:%SZ")
         );
         
         if let Some(token) = &next_token {
