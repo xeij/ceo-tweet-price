@@ -2,15 +2,15 @@
 name = "ceo-tweet-analyzer"
 version = "0.1.0"
 edition = "2021"
-authors = ["Your Name <you@example.com>"]
-description = "Analyze CEO tweets and correlate with stock price movements using Rust, Prolog, and Lean 4"
+authors = ["Your Name <your.email@example.com>"]
+description = "Analyze CEO tweets and correlate with stock price movements using Rust, Prolog, and Lean"
 
 [dependencies]
 # CLI parsing
-clap = { version = "4.5", features = ["derive"] }
+clap = { version = "4.5", features = ["derive", "env"] }
 
-# Async runtime & HTTP
-tokio = { version = "1.41", features = ["full"] }
+# Async runtime and HTTP
+tokio = { version = "1.40", features = ["full"] }
 reqwest = { version = "0.12", features = ["json"] }
 
 # Serialization
@@ -24,17 +24,14 @@ chrono = { version = "0.4", features = ["serde"] }
 anyhow = "1.0"
 thiserror = "1.0"
 
-# Prolog integration
-scryer-prolog = "0.9"
+# Optional: Prolog integration (for future use)
+# scryer-prolog = "0.9"
 
-# Statistics & correlation
-statrs = "0.17"
-
-# Optional: Plotting (can add later)
+# Optional: plotting (can add later)
 # plotters = "0.3"
 
 [dev-dependencies]
-# Testing
+# Testing utilities
 tokio-test = "0.4"
 
 [profile.release]

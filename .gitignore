@@ -1,0 +1,67 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+*.pdb
+
+# Cargo lock file (uncomment if building a library)
+# Cargo.lock
+
+# Generated documentation
+/doc/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# API keys and credentials (IMPORTANT: Never commit these!)
+**/api_keys.txt
+**/credentials.json
+twitter_token.txt
+stock_api_key.txt
+
+# Output files
+*.pl
+*.json
+*.csv
+*.png
+facts.pl
+results.json
+output/
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Lean build artifacts
+lean/.lake/
+lean/build/
+lean/lakefile.olean
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Test coverage
+*.profraw
+*.profdata
+/coverage/
+
+# Documentation builds
+/book/
