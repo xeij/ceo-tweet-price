@@ -25,16 +25,16 @@ async fn main() -> Result<()> {
     
     // Set up logging based on verbosity
     if args.verbose {
-        println!("🔍 Running in verbose mode");
-        println!("📊 CEO Handle: @{}", args.ceo_handle);
-        println!("📈 Stock Ticker: {}", args.ticker);
-        println!("📅 Days to analyze: {}", args.days);
+        println!("Running in verbose mode");
+        println!("CEO Handle: @{}", args.ceo_handle);
+        println!("Stock Ticker: {}", args.ticker);
+        println!("Days to analyze: {}", args.days);
     }
     
-    println!("\n🚀 CEO Tweet Analyzer Starting...\n");
+    println!("\nCEO Tweet Analyzer Starting...\n");
     
     // Step 1: Fetch tweets
-    println!("📱 Fetching tweets from @{}...", args.ceo_handle);
+    println!("Fetching tweets from @{}...", args.ceo_handle);
     let tweets = twitter::fetch_tweets(
         &args.ceo_handle,
         &args.api_key_twitter,
@@ -43,10 +43,10 @@ async fn main() -> Result<()> {
     )
     .await?;
     
-    println!("✅ Fetched {} tweets", tweets.len());
+    println!("Fetched {} tweets", tweets.len());
     
     // Step 2: Fetch stock prices
-    println!("\n📊 Fetching stock prices for {}...", args.ticker);
+    println!("\nFetching stock prices for {}...", args.ticker);
     let prices = stocks::fetch_prices(
         &args.ticker,
         &args.api_key_stocks,
@@ -55,10 +55,10 @@ async fn main() -> Result<()> {
     )
     .await?;
     
-    println!("✅ Fetched {} price points", prices.len());
+    println!("Fetched {} price points", prices.len());
     
     // Step 3: Perform analysis
-    println!("\n🔬 Analyzing tweet impacts and correlations...");
+    println!("\nAnalyzing tweet impacts and correlations...");
     let mut analysis_result = analysis::analyze(
         &args.ceo_handle,
         &args.ticker,
@@ -67,26 +67,26 @@ async fn main() -> Result<()> {
         args.verbose,
     )?;
     
-    println!("✅ Analysis complete");
+    println!("Analysis complete");
     
     // Step 4: Apply Prolog rules
-    println!("\n🧠 Applying Prolog rules for pattern detection...");
+    println!("\nApplying Prolog rules for pattern detection...");
     prolog::apply_rules(&mut analysis_result, args.export_prolog.as_deref())?;
     
-    println!("✅ Prolog analysis complete");
+    println!("Prolog analysis complete");
     
     // Step 5: Display results
-    println!("\n📋 Results:\n");
+    println!("\nResults:\n");
     display_results(&analysis_result, &args)?;
     
     // Step 6: Generate chart if requested
     if let Some(chart_path) = &args.chart_output {
-        println!("\n📈 Generating chart to {}...", chart_path);
+        println!("\nGenerating chart to {}...", chart_path);
         // TODO: Implement chart generation with plotters
-        println!("⚠️  Chart generation not yet implemented");
+        println!("WARNING: Chart generation not yet implemented");
     }
     
-    println!("\n✨ Analysis complete!\n");
+    println!("\nAnalysis complete!\n");
     
     Ok(())
 }
@@ -124,7 +124,7 @@ fn display_table(result: &models::AnalysisResult) -> Result<()> {
     println!("═══════════════════════════════════════════════════════════════════════════\n");
     
     // Summary statistics
-    println!("📊 Summary Statistics:");
+    println!("Summary Statistics:");
     println!("  Correlation (sentiment vs 1d change): {:.4}", 
              result.correlation_1d.unwrap_or(0.0));
     println!("  Correlation (sentiment vs 3d change): {:.4}", 
@@ -135,7 +135,7 @@ fn display_table(result: &models::AnalysisResult) -> Result<()> {
              result.positive_tweets_with_rise_3d);
     
     // Top impactful tweets
-    println!("\n🎯 Most Impactful Tweets (by Prolog rules):");
+    println!("\nMost Impactful Tweets (by Prolog rules):");
     let impactful: Vec<_> = result.impacts.iter()
         .filter(|i| i.is_impactful)
         .take(5)

@@ -37,6 +37,7 @@ stock_api_key.txt
 facts.pl
 results.json
 output/
+web/static/data/
 
 # OS-specific files
 Thumbs.db
@@ -65,3 +66,11 @@ lean/lakefile.olean
 
 # Documentation builds
 /book/
+
+# Documentation files (keep only README.md)
+QUICKSTART.md
+DEVELOPMENT.md
+PROJECT_SUMMARY.md
+WEB_GUIDE.md
+WEB_DASHBOARD_COMPLETE.md
+DOCS_GUIDE.md
