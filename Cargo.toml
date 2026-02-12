@@ -47,7 +47,6 @@ thiserror = "1.0"
 # Optional: plotting (can add later)
 # plotters = "0.3"
 
-agent-twitter-client = "0.1.2"
 
 [dev-dependencies]
 # Testing utilities

@@ -41,11 +41,6 @@ jobs:
 
       - name: Run daily update
         run: ./target/release/daily-update
-        env:
-          # Twitter credentials for tweet fetching (optional)
-          # If not set, tweet counts will be 0
-          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
-          TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
 
       - name: Check for changes
         id: git-check

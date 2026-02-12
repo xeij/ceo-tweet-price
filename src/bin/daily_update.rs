@@ -98,15 +98,6 @@ async fn main() -> Result<()> {
     let current_month = get_current_month();
     println!("Current month: {}", current_month);
 
-    // Check for Twitter credentials
-    let has_twitter_creds = std::env::var("TWITTER_USERNAME").is_ok()
-        && std::env::var("TWITTER_PASSWORD").is_ok();
-
-    if !has_twitter_creds {
-        println!("NOTE: TWITTER_USERNAME/PASSWORD not set - tweet counts will be 0");
-        println!("      Set these env vars to enable tweet tracking\n");
-    }
-
     // Load CEO configuration
     let config_str = std::fs::read_to_string("ceo_config.json")
         .context("Failed to read ceo_config.json")?;
@@ -131,21 +122,7 @@ async fn main() -> Result<()> {
         .user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
         .build()?;
 
-    // Initialize Twitter scraper if credentials available
-    let twitter_scraper = if has_twitter_creds {
-        match init_twitter_scraper().await {
-            Ok(scraper) => {
-                println!("Twitter: Logged in successfully\n");
-                Some(scraper)
-            }
-            Err(e) => {
-                println!("Twitter: Login failed - {}\n", e);
-                None
-            }
-        }
-    } else {
-        None
-    };
+    println!("Using Gemini API for AI-powered tweet counting\n");
 
     let total_entries = db.entries.len();
     for idx in 0..total_entries {
@@ -190,26 +167,27 @@ async fn main() -> Result<()> {
             }
         }
 
-        // Fetch tweet count
-        match fetch_tweet_count(&ceo_handle, twitter_scraper.as_ref()).await {
+        // Fetch tweet count using Gemini API (Direct REST)
+        match fetch_tweet_count(&ceo_handle, &client).await {
             Ok((total, positive, negative, neutral)) => {
                 let entry = &mut db.entries[idx];
                 entry.tweets_this_month = total;
                 entry.positive_tweets = positive;
                 entry.negative_tweets = negative;
                 entry.neutral_tweets = neutral;
-                print!("tweets: {} ", total);
+                println!("tweets: {} OK", total);
             }
             Err(e) => {
-                print!("tweet err: {} ", e);
+                println!("tweets: ERR ({})", e);
             }
         }
+        
+        // Add delay to avoid rate limits (Genesis/Gemini free tier)
+        tokio::time::sleep(std::time::Duration::from_secs(3)).await;
 
         db.entries[idx].last_updated = Utc::now().to_rfc3339();
         println!("OK");
-
-        // Rate limiting - be nice to APIs
-        tokio::time::sleep(tokio::time::Duration::from_millis(1500)).await;
+        tokio::time::sleep(std::time::Duration::from_millis(1500)).await;
     }
 
     // Save database
@@ -316,78 +294,70 @@ async fn fetch_yahoo_price(client: &reqwest::Client, ticker: &str) -> Result<f64
         .context("No price in Yahoo Finance response")
 }
 
-use agent_twitter_client::scraper::Scraper;
+use serde_json::json;
 
-/// Initialize Twitter scraper with login
-async fn init_twitter_scraper() -> Result<Scraper> {
-    let username = std::env::var("TWITTER_USERNAME")
-        .context("TWITTER_USERNAME not set")?;
-    let password = std::env::var("TWITTER_PASSWORD")
-        .context("TWITTER_PASSWORD not set")?;
-
-    let mut scraper = Scraper::new().await
-        .context("Failed to create Twitter scraper")?;
-
-    scraper.login(
-        username,
-        password,
-        None,
-        None
-    ).await.context("Failed to login to Twitter")?;
-
-    Ok(scraper)
-}
-
-/// Fetch tweet count and sentiment for a user
-async fn fetch_tweet_count(handle: &str, scraper: Option<&Scraper>) -> Result<(u32, u32, u32, u32)> {
-    let scraper = match scraper {
-        Some(s) => s,
-        None => return Ok((0, 0, 0, 0)),
-    };
-
-    let profile = scraper.get_profile(handle).await
-        .context("Failed to get Twitter profile")?;
-
-    // Fetch recent tweets - these should be filtered to current month
-    // but for now we just get the most recent ones
-    let response = scraper.get_user_tweets(&profile.id, 50, None).await
-        .context("Failed to fetch tweets")?;
-
-    let now = Utc::now();
-    let current_month = now.month();
-    let current_year = now.year();
-
-    let mut total = 0u32;
-    let mut positive = 0u32;
-    let mut negative = 0u32;
-    let mut neutral = 0u32;
-
-    for tweet in &response.tweets {
-        // Filter to current month only
-        if let Some(timestamp) = tweet.timestamp {
-            let tweet_time = chrono::DateTime::from_timestamp(timestamp, 0);
-            if let Some(dt) = tweet_time {
-                if dt.month() == current_month && dt.year() == current_year {
-                    total += 1;
-
-                    if let Some(text) = &tweet.text {
-                        let sentiment = analyze_sentiment(text);
-                        if sentiment > 0.0 {
-                            positive += 1;
-                        } else if sentiment < 0.0 {
-                            negative += 1;
-                        } else {
-                            neutral += 1;
-                        }
-                    } else {
-                        neutral += 1;
-                    }
-                }
-            }
+/// Fetch tweet count using Gemini API (Direct REST)
+async fn fetch_tweet_count(handle: &str, client: &reqwest::Client) -> Result<(u32, u32, u32, u32)> {
+    // Get Gemini API key from environment
+    let api_key = match std::env::var("GEMINI_API_KEY") {
+        Ok(key) => key,
+        Err(_) => {
+            // No API key set, return zeros
+            return Ok((0, 0, 0, 0));
         }
+    };
+    
+    let now = Utc::now();
+    let month_name = now.format("%B").to_string(); // e.g., "February"
+    let year = now.year();
+    
+    // Ask Gemini about tweet count
+    let prompt = format!(
+        "How many tweets did @{} post on Twitter/X in {} {}? \
+         Please reply with ONLY a number, nothing else. \
+         If you cannot find this information, reply with 0.",
+        handle, month_name, year
+    );
+    
+    let url = format!(
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={}", 
+        api_key
+    );
+    
+    let body = json!({
+        "contents": [{
+            "parts": [{"text": prompt}]
+        }]
+    });
+    
+    let response = client.post(&url)
+        .json(&body)
+        .send()
+        .await
+        .context("Failed to call Gemini API")?;
+        
+    if !response.status().is_success() {
+        let status = response.status();
+        let text = response.text().await.unwrap_or_default();
+        eprintln!("Gemini API error for @{}: {} - {}", handle, status, text);
+        return Ok((0, 0, 0, 0));
     }
-
-    Ok((total, positive, negative, neutral))
+    
+    let json_resp: serde_json::Value = response.json().await
+        .context("Failed to parse Gemini response")?;
+        
+    // Extract text from: candidates[0].content.parts[0].text
+    if let Some(text) = json_resp["candidates"][0]["content"]["parts"][0]["text"].as_str() {
+        // Try to parse the first number found in the response
+        let count = text
+            .split_whitespace()
+            .find_map(|word| word.trim().parse::<u32>().ok())
+            .unwrap_or(0);
+        
+        return Ok((count, 0, 0, count));
+    }
+    
+    Ok((0, 0, 0, 0))
 }
 
 /// Simple keyword-based sentiment analysis
